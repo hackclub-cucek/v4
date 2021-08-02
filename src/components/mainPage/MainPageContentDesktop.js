@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {COLORS} from '../../styles/Colors';
 import {StaticImage} from 'gatsby-plugin-image';
@@ -39,7 +40,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: '0.025em',
     textTransform: 'uppercase',
-    textShadow: '3.08px solid #FFFFFF',
+    WebkitTextFillColor: 'rgba(255, 255, 255,0)',
+    WebkitTextStrokeWidth: '2px',
     color: '#FFFFFF',
     margin: 0,
   },

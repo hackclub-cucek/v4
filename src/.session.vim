@@ -8,7 +8,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +23 pages/index.js
+badd +27 pages/index.js
 badd +67 components/seo.js
 badd +9 pages/page-2.js
 badd +5 styles/Colors.js
@@ -17,21 +17,21 @@ badd +36 components/Header.js
 badd +50 components/HeaderDesktop.js
 badd +4 styles/Global.css
 badd +8 components/Utility.js
-badd +16 components/mainPage/MainPageContentDesktop.js
-badd +10 components/mainPage/MainPageExtras.js
+badd +42 components/mainPage/MainPageContentDesktop.js
+badd +7 components/mainPage/MainPageExtras.js
 badd +2 components/mainPage/TitleWithRect.js
-badd +102 components/mainPage/ThingsWeDo.js
+badd +12 components/mainPage/ThingsWeDo.js
 argglobal
 %argdel
-edit components/mainPage/ThingsWeDo.js
+edit components/mainPage/MainPageContentDesktop.js
 argglobal
-balt components/HeaderDesktop.js
-let s:l = 55 - ((35 * winheight(0) + 22) / 44)
+balt pages/index.js
+let s:l = 42 - ((36 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 55
-normal! 0
+keepjumps 42
+normal! 046|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
