@@ -17,7 +17,7 @@ badd +36 components/Header.js
 badd +50 components/HeaderDesktop.js
 badd +4 styles/Global.css
 badd +8 components/Utility.js
-badd +42 components/mainPage/MainPageContentDesktop.js
+badd +45 components/mainPage/MainPageContentDesktop.js
 badd +7 components/mainPage/MainPageExtras.js
 badd +2 components/mainPage/TitleWithRect.js
 badd +12 components/mainPage/ThingsWeDo.js
@@ -26,12 +26,12 @@ argglobal
 edit components/mainPage/MainPageContentDesktop.js
 argglobal
 balt pages/index.js
-let s:l = 42 - ((36 * winheight(0) + 22) / 44)
+let s:l = 44 - ((35 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 42
-normal! 046|
+keepjumps 44
+normal! 029|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
