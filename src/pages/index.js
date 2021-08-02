@@ -94,6 +94,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     width: 270,
     marginTop: 54,
+    borderTopStyle: 'hidden',
+    borderRightStyle: 'hidden',
+    borderLeftStyle: 'hidden',
   },
 });
 export default IndexPage;
