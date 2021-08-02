@@ -4,8 +4,8 @@ export function getDeviceDimention() {
 
   if (typeof window !== 'undefined') {
     // it's safe to use window now
-    width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-    height = window.innerHeight > 0 ? window.innerHeight : screen.height;
+    width = window.innerWidth > 0 ? window.innerWidth : window.screen.width;
+    height = window.innerHeight > 0 ? window.innerHeight : window.screen.height;
   }
 
   return {width: width, height: height};
