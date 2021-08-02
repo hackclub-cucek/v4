@@ -3,7 +3,7 @@ import {COLORS} from '../../styles/Colors';
 import {StaticImage} from 'gatsby-plugin-image';
 import {StyleSheet, css} from 'aphrodite';
 
-const MainPageContentDesktop = () => {
+const MainPageContentDesktop = ({pressHandler}) => {
   return (
     <div className={css(styles.container)}>
       <p className={css(styles.title)}>Hack Club CUCEK</p>
@@ -11,7 +11,7 @@ const MainPageContentDesktop = () => {
         A nonprofit network of high school coding clubs and makers around the
         world, for the students, by the students.
       </p>
-      <button className={css(styles.button)}>
+      <button className={css(styles.button)} onClick={pressHandler}>
         Our Vision
         <StaticImage src="../images/icons/nextIcon.png" alt="next-icon" />
       </button>
