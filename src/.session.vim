@@ -14,24 +14,25 @@ badd +9 pages/page-2.js
 badd +5 styles/Colors.js
 badd +6 pages/404.js
 badd +36 components/Header.js
-badd +50 components/HeaderDesktop.js
-badd +4 styles/Global.css
+badd +12 components/HeaderDesktop.js
+badd +3 styles/Global.css
 badd +8 components/Utility.js
-badd +45 components/mainPage/MainPageContentDesktop.js
-badd +7 components/mainPage/MainPageExtras.js
-badd +2 components/mainPage/TitleWithRect.js
-badd +12 components/mainPage/ThingsWeDo.js
+badd +17 components/mainPage/MainPageContentDesktop.js
+badd +23 components/mainPage/MainPageExtras.js
+badd +44 components/mainPage/TitleWithRect.js
+badd +79 components/mainPage/ThingsWeDo.js
+badd +83 components/mainPage/OurInitiatives.js
 argglobal
 %argdel
-edit components/mainPage/MainPageContentDesktop.js
+edit components/mainPage/OurInitiatives.js
 argglobal
-balt pages/index.js
-let s:l = 44 - ((35 * winheight(0) + 22) / 44)
+balt components/mainPage/TitleWithRect.js
+let s:l = 71 - ((1 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 44
-normal! 029|
+keepjumps 71
+normal! 010|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -44,7 +45,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
