@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, css} from 'aphrodite';
 import {StaticImage} from 'gatsby-plugin-image';
 import {COLORS} from '../../styles/Colors';
+import {Link} from 'gatsby';
 
 const ThingsWeDo = () => {
   return (
@@ -17,6 +18,10 @@ const ThingsWeDo = () => {
           Bibendum etiam nec massa ok ok bendum etiam nec massa ok ok posuere
           neque diam. Mattis molestie feugiat nisi.
         </p>
+
+        <Link to="/" className={css(styles.link)}>
+          Read More
+        </Link>
       </div>
 
       <div className={css(styles.itemContainer)}>
@@ -30,6 +35,10 @@ const ThingsWeDo = () => {
           Bibendum etiam nec massa ok ok bendum etiam nec massa ok ok posuere
           neque diam. Mattis molestie feugiat nisi.
         </p>
+
+        <Link to="/" className={css(styles.link)}>
+          Read More
+        </Link>
       </div>
 
       <div className={css(styles.itemContainer)}>
@@ -43,6 +52,10 @@ const ThingsWeDo = () => {
           Bibendum etiam nec massa ok ok bendum etiam nec massa ok ok posuere
           neque diam. Mattis molestie feugiat nisi.
         </p>
+
+        <Link to="/" className={css(styles.link)}>
+          Read More
+        </Link>
       </div>
     </div>
   );
@@ -85,6 +98,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: COLORS.primary,
     marginTop: 24,
+  },
+  link: {
+    fontFamily: 'Libre Franklin',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    fontSize: '16px',
+    lineHeight: '30px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    color: COLORS.secondary,
   },
 });
 
