@@ -5,6 +5,7 @@ import background from '../images/bgDesktop.png';
 import '../styles/Global.css';
 import {getDeviceDimention} from '../components/Utility';
 import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
+import MainPageExtras from '../components/mainPage/MainPageExtras';
 
 const IndexPage = () => {
   const width = getDeviceDimention().width;
@@ -14,9 +15,12 @@ const IndexPage = () => {
 
   // Desktop Page
   return (
-    <div className={css(styles.rootDesktop)}>
-      <HeaderDesktop />
-      <MainPageContentDesktop />
+    <div>
+      <div className={css(styles.rootDesktop)}>
+        <HeaderDesktop />
+        <MainPageContentDesktop />
+      </div>
+      <MainPageExtras />
     </div>
   );
 };
