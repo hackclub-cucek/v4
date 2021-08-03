@@ -21,6 +21,7 @@ const ThingsWeDo = () => {
 
         <Link to="/" className={css(styles.link)}>
           Read More
+          <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
         </Link>
       </div>
 
@@ -38,6 +39,7 @@ const ThingsWeDo = () => {
 
         <Link to="/" className={css(styles.link)}>
           Read More
+          <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
         </Link>
       </div>
 
@@ -55,6 +57,7 @@ const ThingsWeDo = () => {
 
         <Link to="/" className={css(styles.link)}>
           Read More
+          <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
         </Link>
       </div>
     </div>
@@ -100,6 +103,8 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   link: {
+    display: 'flex',
+    alignItems: 'center',
     fontFamily: 'Libre Franklin',
     fontStyle: 'normal',
     fontWeight: '500',
@@ -108,6 +113,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textDecoration: 'none',
     color: COLORS.secondary,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
 });
 

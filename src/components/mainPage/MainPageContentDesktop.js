@@ -14,7 +14,7 @@ const MainPageContentDesktop = ({pressHandler}) => {
       </p>
       <button className={css(styles.button)} onClick={pressHandler}>
         Our Vision
-        <StaticImage src="../images/icons/nextIcon.png" alt="next-icon" />
+        <i className="ri-arrow-right-line"></i>
       </button>
     </div>
   );
