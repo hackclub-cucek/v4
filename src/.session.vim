@@ -17,22 +17,23 @@ badd +36 components/Header.js
 badd +12 components/HeaderDesktop.js
 badd +3 styles/Global.css
 badd +8 components/Utility.js
-badd +17 components/mainPage/MainPageContentDesktop.js
-badd +23 components/mainPage/MainPageExtras.js
+badd +22 components/mainPage/MainPageContentDesktop.js
+badd +21 components/mainPage/MainPageExtras.js
 badd +44 components/mainPage/TitleWithRect.js
-badd +79 components/mainPage/ThingsWeDo.js
-badd +83 components/mainPage/OurInitiatives.js
+badd +42 components/mainPage/ThingsWeDo.js
+badd +64 components/mainPage/OurInitiatives.js
+badd +26 components/mainPage/UpcomingEvents.js
 argglobal
 %argdel
-edit components/mainPage/OurInitiatives.js
+edit components/mainPage/UpcomingEvents.js
 argglobal
-balt components/mainPage/TitleWithRect.js
-let s:l = 71 - ((1 * winheight(0) + 22) / 44)
+balt components/mainPage/ThingsWeDo.js
+let s:l = 117 - ((34 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 71
-normal! 010|
+keepjumps 117
+normal! 016|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

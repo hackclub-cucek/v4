@@ -4,6 +4,7 @@ import {StyleSheet, css} from 'aphrodite';
 import TitleWithRect from './TitleWithRect';
 import ThingsWeDo from './ThingsWeDo';
 import OurInitiatives from './OurInitiatives';
+import UpcomingEvents from './UpcomingEvents';
 
 const MainPageExtras = ({ref}) => {
   return (
@@ -14,6 +15,10 @@ const MainPageExtras = ({ref}) => {
       <div className={css(styles.space)} />
       <TitleWithRect name="Our Initiatives" />
       <OurInitiatives />
+
+      <div className={css(styles.space)} />
+      <TitleWithRect name="Upcoming Events" />
+      <UpcomingEvents />
     </div>
   );
 };
