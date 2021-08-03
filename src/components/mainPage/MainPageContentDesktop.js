@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {COLORS} from '../../styles/Colors';
-import {StaticImage} from 'gatsby-plugin-image';
 import {StyleSheet, css} from 'aphrodite';
 
 const MainPageContentDesktop = ({pressHandler}) => {
