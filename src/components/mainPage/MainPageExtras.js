@@ -5,6 +5,7 @@ import TitleWithRect from './TitleWithRect';
 import ThingsWeDo from './ThingsWeDo';
 import OurInitiatives from './OurInitiatives';
 import UpcomingEvents from './UpcomingEvents';
+import GalleryImages from './GalleryImages';
 
 const MainPageExtras = ({ref}) => {
   return (
@@ -19,6 +20,10 @@ const MainPageExtras = ({ref}) => {
       <div className={css(styles.space)} />
       <TitleWithRect name="Upcoming Events" />
       <UpcomingEvents />
+
+      <div className={css(styles.space)} />
+      <TitleWithRect name="Gallery" />
+      <GalleryImages />
     </div>
   );
 };
