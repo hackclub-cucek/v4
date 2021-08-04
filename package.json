@@ -6,6 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "aphrodite": "^2.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "framer-motion": "^4.1.17",
     "gatsby": "^3.10.2",
     "gatsby-plugin-aphrodite": "^2.1.1",
     "gatsby-plugin-gatsby-cloud": "^2.10.0",
@@ -16,8 +19,6 @@
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-source-filesystem": "^3.10.0",
     "gatsby-transformer-sharp": "^3.10.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

@@ -19,6 +19,9 @@ const MainPageExtras = ({ref}) => {
       <div className={css(styles.space)} />
       <TitleWithRect name="Upcoming Events" />
       <UpcomingEvents />
+
+      <div className={css(styles.space)} />
+      <TitleWithRect name="Gallery" />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const IndexPage = () => {
   const extrasRef = useRef();
 
   const handleOurVisionPress = () => {
-    extrasRef.current.scrollIntoView();
+    extrasRef.current.scrollIntoView({behavior: 'smooth'});
   };
 
   const width = getDeviceDimention().width;
