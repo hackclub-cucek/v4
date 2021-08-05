@@ -6,10 +6,12 @@ import '../styles/Global.css';
 import {getDeviceDimention} from '../components/Utility';
 import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
 import MainPageExtras from '../components/mainPage/MainPageExtras';
+import FooterDesktop from '../components/FooterDesktop';
 
 const IndexPage = () => {
   const extrasRef = useRef();
 
+  // Function to scroll down
   const handleOurVisionPress = () => {
     extrasRef.current.scrollIntoView({behavior: 'smooth'});
   };
@@ -28,6 +30,7 @@ const IndexPage = () => {
       </div>
       <div ref={extrasRef}></div>
       <MainPageExtras ref={extrasRef} />
+      <FooterDesktop />
     </div>
   );
 };

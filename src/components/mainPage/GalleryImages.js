@@ -36,7 +36,7 @@ const GalleryImages = () => {
     },
   };
 
-  const get3Images = () => {
+  const getImages = () => {
     const offSet = imageIndex + 3;
     if (offSet >= images.length) {
       return [
@@ -50,7 +50,7 @@ const GalleryImages = () => {
 
   return (
     <div className={css(styles.root)}>
-      {get3Images().map((item, id) => (
+      {getImages().map((item, id) => (
         <motion.img
           className={css(styles.images)}
           key={id * imageIndex + 100 * Math.random()}
