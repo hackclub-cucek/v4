@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    marginTop: 250,
+    marginTop: 'auto',
     marginBottom: 'auto',
     width: 'max-content',
     height: 'max-content',

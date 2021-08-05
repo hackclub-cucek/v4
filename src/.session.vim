@@ -14,7 +14,7 @@ badd +9 pages/page-2.js
 badd +5 styles/Colors.js
 badd +6 pages/404.js
 badd +36 components/Header.js
-badd +113 components/HeaderDesktop.js
+badd +112 components/HeaderDesktop.js
 badd +3 styles/Global.css
 badd +8 components/Utility.js
 badd +22 components/mainPage/MainPageContentDesktop.js
@@ -27,15 +27,15 @@ badd +97 components/mainPage/GalleryImages.js
 badd +25 components/FooterDesktop.js
 argglobal
 %argdel
-edit components/HeaderDesktop.js
+edit components/mainPage/MainPageContentDesktop.js
 argglobal
-balt components/FooterDesktop.js
-let s:l = 112 - ((36 * winheight(0) + 22) / 44)
+balt components/HeaderDesktop.js
+let s:l = 26 - ((25 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 112
-normal! 027|
+keepjumps 26
+normal! 020|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
