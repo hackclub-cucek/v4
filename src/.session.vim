@@ -23,18 +23,18 @@ badd +44 components/mainPage/TitleWithRect.js
 badd +42 components/mainPage/ThingsWeDo.js
 badd +64 components/mainPage/OurInitiatives.js
 badd +95 components/mainPage/UpcomingEvents.js
-badd +1 components/mainPage/GalleryImages.js
+badd +50 components/mainPage/GalleryImages.js
 argglobal
 %argdel
 edit components/mainPage/GalleryImages.js
 argglobal
 balt components/mainPage/MainPageExtras.js
-let s:l = 4 - ((3 * winheight(0) + 22) / 44)
+let s:l = 47 - ((26 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 04|
+keepjumps 47
+normal! 010|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
