@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
     paddingBottom: 72,
     display: 'flex',
     justifyContent: 'space-between',
+    marginTop: 120,
   },
   title: {
     fontFamily: 'Libre Franklin',
