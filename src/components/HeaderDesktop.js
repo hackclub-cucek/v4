@@ -79,7 +79,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     color: COLORS.white,
   },
-  flag: {},
+  flag: {
+    width: '100%',
+    height: '100%',
+    maxHeight: 128,
+    maxWidth: 300,
+
+    marginLeft: '5%',
+    objectFit: 'contain',
+  },
   navBar: {
     display: 'flex',
     flexDirection: 'row',
@@ -98,10 +106,17 @@ const styles = StyleSheet.create({
   },
   socialContainer: {
     marginTop: 64,
+    display: 'flex',
+    flexWrap: 'wrap',
+
+    '@media (max-width: 1650px)': {
+      flexDirection: 'column',
+    },
   },
   socialIcons: {
     marginLeft: 21,
     marginRight: 21,
+    marginBottom: 20,
   },
 });
 
