@@ -53,11 +53,14 @@ const GalleryImages = () => {
       {get3Images().map((item, id) => (
         <motion.img
           className={css(styles.images)}
-          key={id}
+          key={id * imageIndex + 100 * Math.random()}
           src={item}
           animate={{
-            // x: -420 * imageIndex,
+            y: id === 1 ? -40 : 0,
             scale: id === 1 ? 1.2 : 1,
+          }}
+          transition={{
+            duration: 0.5,
           }}
         />
       ))}
@@ -71,9 +74,9 @@ const styles = StyleSheet.create({
     marginTop: 96,
     overflowX: 'hidden',
     overflowY: 'hidden',
-    flex: 1,
     marginBottom: 100,
     justifyContent: 'space-evenly',
+    height: 'max-content',
   },
 
   images: {
@@ -81,6 +84,7 @@ const styles = StyleSheet.create({
     height: 400,
     marginLeft: 50,
     marginTop: 100,
+    marginBottom: 100,
   },
 });
 
