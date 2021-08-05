@@ -24,6 +24,10 @@ const FooterDesktop = () => {
         <p className={css(styles.text)}>
           All Rights Reserved 2021, Hack Club CUCEK Designed with ❤️ @akhil__tj
         </p>
+        <p className={css(styles.text)}>
+          Programmed By -
+          <a href="https://github.com/superRaptor911">Aditya Aravind</a>
+        </p>
       </div>
 
       <div className={css(styles.container)}>
