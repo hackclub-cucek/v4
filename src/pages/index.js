@@ -2,10 +2,13 @@ import React, {useRef} from 'react';
 import HeaderDesktop from '../components/HeaderDesktop';
 import {StyleSheet, css} from 'aphrodite';
 import background from '../images/bgDesktop.png';
+import backgroundMob from '../images/bgMobile.png';
 import '../styles/Global.css';
 import {getDeviceDimention} from '../components/Utility';
 import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
 import MainPageExtras from '../components/mainPage/MainPageExtras';
+import HeaderMobile from '../components/HeaderMobile';
+import MainPageMobile from '../components/mainPageMobile/MainPageMobile';
 
 const IndexPage = () => {
   const extrasRef = useRef();
@@ -16,7 +19,13 @@ const IndexPage = () => {
 
   const width = getDeviceDimention().width;
   if (width < 1280) {
-    return <div>Mobile view</div>;
+    //Mobile page
+    return (
+      <div className={css(styles.rootMobile)}>
+        <HeaderMobile />
+        <MainPageMobile />
+      </div>
+    );
   }
 
   // Desktop Page
@@ -40,6 +49,15 @@ const styles = StyleSheet.create({
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
+  },
+  rootMobile: {
+    backgroundImage: `url(${backgroundMob})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100vh',
   },
 });
 export default IndexPage;
