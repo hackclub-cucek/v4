@@ -14,28 +14,28 @@ badd +9 pages/page-2.js
 badd +5 styles/Colors.js
 badd +6 pages/404.js
 badd +36 components/Header.js
-badd +112 components/HeaderDesktop.js
+badd +117 components/HeaderDesktop.js
 badd +3 styles/Global.css
 badd +8 components/Utility.js
-badd +22 components/mainPage/MainPageContentDesktop.js
+badd +26 components/mainPage/MainPageContentDesktop.js
 badd +31 components/mainPage/MainPageExtras.js
 badd +44 components/mainPage/TitleWithRect.js
 badd +42 components/mainPage/ThingsWeDo.js
 badd +64 components/mainPage/OurInitiatives.js
-badd +95 components/mainPage/UpcomingEvents.js
+badd +59 components/mainPage/UpcomingEvents.js
 badd +97 components/mainPage/GalleryImages.js
 badd +25 components/FooterDesktop.js
 argglobal
 %argdel
-edit components/mainPage/MainPageContentDesktop.js
+edit components/HeaderDesktop.js
 argglobal
-balt components/HeaderDesktop.js
-let s:l = 26 - ((25 * winheight(0) + 22) / 44)
+balt components/mainPage/UpcomingEvents.js
+let s:l = 113 - ((34 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 26
-normal! 020|
+keepjumps 113
+normal! 018|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

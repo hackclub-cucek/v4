@@ -110,11 +110,11 @@ const styles = StyleSheet.create({
     marginTop: 64,
     display: 'flex',
     justifyContent: 'space-between',
-    marginRight: 40,
+    marginRight: 50,
   },
   socialIcons: {
-    marginLeft: 11,
-    marginRight: 11,
+    marginLeft: 8,
+    marginRight: 8,
     marginBottom: 20,
   },
 });
