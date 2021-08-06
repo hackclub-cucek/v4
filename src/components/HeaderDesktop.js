@@ -36,6 +36,7 @@ const HeaderDesktop = () => {
         // formats={['AUTO', 'WEBP', 'AVIF']}
         alt="flag"
         imgClassName={css(styles.flag)}
+        style={{marginLeft: 40}}
       />
 
       <div className={css(styles.navBar)}>
@@ -83,9 +84,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 'auto',
     maxWidth: '100%',
-
-    marginLeft: 40,
-    objectFit: 'contain',
   },
   navBar: {
     width: '40%',
@@ -112,6 +110,7 @@ const styles = StyleSheet.create({
     marginTop: 64,
     display: 'flex',
     justifyContent: 'space-between',
+    marginRight: 40,
   },
   socialIcons: {
     marginLeft: 11,
