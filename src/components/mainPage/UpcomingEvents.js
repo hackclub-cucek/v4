@@ -49,6 +49,8 @@ const styles = StyleSheet.create({
   container: {
     width: 357,
     marginBottom: 80,
+    marginLeft: 10,
+    marginRight: 10,
   },
   image: {
     width: 357,
