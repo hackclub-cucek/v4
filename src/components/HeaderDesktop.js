@@ -35,7 +35,7 @@ const HeaderDesktop = () => {
         quality={95}
         // formats={['AUTO', 'WEBP', 'AVIF']}
         alt="flag"
-        className={css(styles.flag)}
+        imgClassName={css(styles.flag)}
       />
 
       <div className={css(styles.navBar)}>
@@ -81,16 +81,20 @@ const styles = StyleSheet.create({
   },
   flag: {
     width: '100%',
-    height: '100%',
-    maxHeight: 128,
-    maxWidth: 300,
+    height: 'auto',
+    maxWidth: '100%',
 
-    marginLeft: '5%',
+    marginLeft: 40,
     objectFit: 'contain',
   },
   navBar: {
+    width: '40%',
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft: 100,
+    marginRight: 100,
+    minWidth: 650,
   },
   item: {
     fontFamily: 'Libre Franklin',
@@ -99,23 +103,19 @@ const styles = StyleSheet.create({
     fontSize: '24px',
     lineHeight: '29px',
     textDecoration: 'none',
-    marginLeft: 42,
-    marginRight: 42,
+    marginLeft: 18,
+    marginRight: 18,
     color: COLORS.white,
     marginTop: 64,
   },
   socialContainer: {
     marginTop: 64,
     display: 'flex',
-    flexWrap: 'wrap',
-
-    '@media (max-width: 1650px)': {
-      flexDirection: 'column',
-    },
+    justifyContent: 'space-between',
   },
   socialIcons: {
-    marginLeft: 21,
-    marginRight: 21,
+    marginLeft: 11,
+    marginRight: 11,
     marginBottom: 20,
   },
 });
