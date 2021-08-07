@@ -1,8 +1,7 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import HeaderDesktop from '../components/HeaderDesktop';
 import {StyleSheet, css} from 'aphrodite';
 import background from '../images/bgDesktop.png';
-import backgroundMob from '../images/bgMobile.png';
 import '../styles/Global.css';
 import {getDeviceDimention} from '../components/Utility';
 import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
@@ -10,19 +9,23 @@ import MainPageExtras from '../components/mainPage/MainPageExtras';
 import HeaderMobile from '../components/HeaderMobile';
 import MainPageMobile from '../components/mainPageMobile/MainPageMobile';
 import FooterDesktop from '../components/FooterDesktop';
-import {StaticImage} from 'gatsby-plugin-image';
+// import {StaticImage} from 'gatsby-plugin-image';
 import ThingsWeDoMob from '../components/mainPageMobile/ThingsWeDoMob';
 
 const IndexPage = () => {
   const extrasRef = useRef();
+  const [isMobile, setIsMobile] = useState(true);
 
   // Function to scroll down
   const handleOurVisionPress = () => {
     extrasRef.current.scrollIntoView({behavior: 'smooth'});
   };
 
-  const width = getDeviceDimention().width;
-  if (width < 1280) {
+  useEffect(() => {
+    setIsMobile(getDeviceDimention().width < 1280);
+  }, []);
+
+  if (isMobile) {
     //Mobile page
     return (
       <div>
