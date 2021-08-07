@@ -5,4 +5,5 @@ body {
   margin: 0px;
   height: 100%;
   font-family: 'Libre Franklin';
+  overflow-x: hidden
 }

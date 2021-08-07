@@ -74,12 +74,12 @@ const styles = StyleSheet.create({
   },
   rootMobile: {
     display: 'flex',
-    backgroundPosition: 'left -375px top 0px',
     flexDirection: 'column',
     width: '100vw',
     height: '100vh',
-    '@media (min-width: 1080px)': {
-      backgroundPosition: 'left 0px top 0px',
+    backgroundPosition: 'left 0px top 0px',
+    '@media (max-width: 1080px)': {
+      backgroundPosition: 'left -375px top 0px',
     },
   },
 });
