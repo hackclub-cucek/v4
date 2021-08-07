@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, {useEffect, useRef, useState} from 'react';
 import HeaderDesktop from '../components/HeaderDesktop';
 import {StyleSheet, css} from 'aphrodite';
@@ -13,8 +14,12 @@ import FooterDesktop from '../components/FooterDesktop';
 // import {StaticImage} from 'gatsby-plugin-image';
 import ThingsWeDoMob from '../components/mainPageMobile/ThingsWeDoMob';
 import useDeviceType from '../components/hooks/useDeviceType';
+import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import {graphql} from 'gatsby';
+import {convertToBgImage} from 'gbimage-bridge';
+import BackgroundImage from 'gatsby-background-image';
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   const extrasRef = useRef();
   const deviceType = useDeviceType();
 
@@ -37,13 +42,19 @@ const IndexPage = () => {
     );
   }
 
+  const image = getImage(data.file);
+  const bgImage = convertToBgImage(image);
   // Desktop Page
   return (
     <div>
-      <div className={css(styles.rootDesktop)}>
+      <BackgroundImage
+        Tag="section"
+        {...bgImage}
+        preserveStackingContext
+        className={css(styles.rootDesktop)}>
         <HeaderDesktop />
         <MainPageContentDesktop pressHandler={handleOurVisionPress} />
-      </div>
+      </BackgroundImage>
       <div ref={extrasRef}></div>
       <MainPageExtras ref={extrasRef} />
       <FooterDesktop />
@@ -53,9 +64,6 @@ const IndexPage = () => {
 
 const styles = StyleSheet.create({
   rootDesktop: {
-    backgroundImage: `url(${background})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
@@ -74,4 +82,15 @@ const styles = StyleSheet.create({
     },
   },
 });
+
+export const pageQuery = graphql`
+  query MyQuery {
+    file(relativePath: {eq: "bgDesktop.png"}) {
+      childImageSharp {
+        gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+    }
+  }
+`;
+
 export default IndexPage;
