@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   title: {
-    fontFamily: 'Libre Franklin',
     fontStyle: 'normal',
     fontWeight: '900',
     fontSize: '85.3333px',
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
     margin: 0,
   },
   details: {
-    fontFamily: 'Libre Franklin',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '24px',
@@ -58,7 +56,6 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   button: {
-    fontFamily: 'Libre Franklin',
     fontStyle: 'normal',
     fontWeight: '600',
     fontSize: '26.6667px',
