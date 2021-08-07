@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
+    backgroundPosition: 'left 0px top 0px',
   },
   rootMobile: {
     display: 'flex',
