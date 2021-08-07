@@ -11,21 +11,18 @@ import MainPageMobile from '../components/mainPageMobile/MainPageMobile';
 import FooterDesktop from '../components/FooterDesktop';
 // import {StaticImage} from 'gatsby-plugin-image';
 import ThingsWeDoMob from '../components/mainPageMobile/ThingsWeDoMob';
+import useDeviceType from '../components/hooks/useDeviceType';
 
 const IndexPage = () => {
   const extrasRef = useRef();
-  const [isMobile, setIsMobile] = useState(true);
+  const deviceType = useDeviceType();
 
   // Function to scroll down
   const handleOurVisionPress = () => {
     extrasRef.current.scrollIntoView({behavior: 'smooth'});
   };
 
-  useEffect(() => {
-    setIsMobile(getDeviceDimention().width < 1280);
-  }, []);
-
-  if (isMobile) {
+  if (deviceType === 'mobile') {
     //Mobile page
     return (
       <div>
