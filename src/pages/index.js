@@ -27,21 +27,26 @@ const IndexPage = ({data}) => {
     extrasRef.current.scrollIntoView({behavior: 'smooth'});
   };
 
+  const image = getImage(data.file);
+  const bgImage = convertToBgImage(image);
+
   if (deviceType === 'mobile') {
     //Mobile page
     return (
       <div>
-        <div className={css(styles.rootMobile)}>
+        <BackgroundImage
+          Tag="section"
+          {...bgImage}
+          preserveStackingContext
+          className={css(styles.rootMobile)}>
           <HeaderMobile />
           <MainPageMobile />
-        </div>
+        </BackgroundImage>
         <ThingsWeDoMob />
       </div>
     );
   }
 
-  const image = getImage(data.file);
-  const bgImage = convertToBgImage(image);
   // Desktop Page
   return (
     <div>
@@ -67,9 +72,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   rootMobile: {
-    backgroundImage: `url(${background})`,
-    backgroundSize: 'auto 100vh',
-    backgroundRepeat: 'no-repeat',
     display: 'flex',
     backgroundPosition: 'left -375px top 0px',
     flexDirection: 'column',
