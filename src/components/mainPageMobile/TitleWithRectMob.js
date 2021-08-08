@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Libre Franklin',
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: '32px',
+    fontSize: '24px',
     lineHeight: '126.78%',
     textAlign: 'center',
     textTransform: 'capitalize',
@@ -34,10 +34,10 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   rectangle: {
-    height: 12,
+    height: 8,
     width: '70%',
     backgroundColor: COLORS.secondary,
-    marginTop: -12,
+    marginTop: -10,
   },
 });
 

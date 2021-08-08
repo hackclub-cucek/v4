@@ -5,7 +5,7 @@ import TitleWithRectMob from './TitleWithRectMob';
 import ThingsWeDoMob from './ThingsWeDoMob';
 import OurInitiativesMob from './OurInitiativesMob';
 import UpcomingEventsMob from './UpcomingEventsMob';
-import GalleryImages from './GalleryImages';
+import GalleryImages from './GalleryImagesMob';
 
 const MainPageExtras = ({ref}) => {
   return (
