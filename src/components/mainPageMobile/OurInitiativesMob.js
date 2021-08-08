@@ -7,63 +7,75 @@ const OurInitiativesMob = () => {
   return (
     <div className={css(styles.root)}>
       <div className={css(styles.container)}>
-        <StaticImage
-          src="../../images/roboMan.png"
-          alt="robot"
-          className={css(styles.image)}
-        />
-        <div className={css(styles.textContents)}>
-          {' '}
-          <div className={css(styles.title)}>Id vel varius mauris morbi</div>
-          <div className={css(styles.description)}>
-            In dignissim ut tortor quam. In et convallis suspendisse vel. Urna,
-            ante ut mauris, dolor interdum libero, proin accumsan, vitae. In
-            risus sit convallis volutpat.
+        <div className={css(styles.imgDiv)}>
+          <StaticImage
+            src="../../images/roboMan.png"
+            alt="robot"
+            className={css(styles.image)}
+          />
+        </div>
+        <div className={css(styles.textBox)}>
+          <div className={css(styles.textContents)}>
+            {' '}
+            <div className={css(styles.title)}>Id vel varius mauris morbi</div>
+            <div className={css(styles.description)}>
+              In dignissim ut tortor quam. In et convallis suspendisse vel.
+              Urna, ante ut mauris, dolor interdum libero, proin accumsan,
+              vitae. In risus sit convallis volutpat.
+            </div>
+            <div className={css(styles.uoList)}>
+              <ul className={css(styles.listCont)}>
+                <li>Eget diam purus, a massa</li>
+                <li>Ante ut mauris, dolor interdum</li>
+                <li>Proin accumsan</li>
+              </ul>
+            </div>
+            <button className={css(styles.button)}> Live Demo</button>
           </div>
-          <div className={css(styles.uoList)}>
-            <ul className={css(styles.listCont)}>
-              <li>Eget diam purus, a massa</li>
-              <li>Ante ut mauris, dolor interdum</li>
-              <li>Proin accumsan</li>
-            </ul>
-          </div>
-          <button className={css(styles.button)}> Live Demo</button>
         </div>
       </div>
       <div className={css(styles.container)}>
-        <StaticImage
-          src="../../images/iphoneMob.png"
-          alt="robot"
-          className={css(styles.image)}
-        />
-        <div className={css(styles.textContents)}>
-          {' '}
-          <div className={css(styles.title)}>Id vel varius mauris morbi</div>
-          <div className={css(styles.description)}>
-            In dignissim ut tortor quam. In et convallis suspendisse vel. Urna,
-            ante ut mauris, dolor interdum libero, proin accumsan, vitae. In
-            risus sit convallis volutpat.
+        <div className={css(styles.imgDiv)}>
+          <StaticImage
+            src="../../images/iphoneMob.png"
+            alt="robot"
+            className={css(styles.image)}
+          />
+        </div>
+        <div className={css(styles.textBox)}>
+          <div className={css(styles.textContents)}>
+            {' '}
+            <div className={css(styles.title)}>Id vel varius mauris morbi</div>
+            <div className={css(styles.description)}>
+              In dignissim ut tortor quam. In et convallis suspendisse vel.
+              Urna, ante ut mauris, dolor interdum libero, proin accumsan,
+              vitae. In risus sit convallis volutpat.
+            </div>
+            <button className={css(styles.button)}> Know More</button>
           </div>
-          <button className={css(styles.button)}> Know More</button>
         </div>
       </div>
       <div className={css(styles.container)}>
-        <StaticImage
-          src="../../images/happyFace.png"
-          alt="robot"
-          className={css(styles.image)}
-        />
-        <div className={css(styles.textContents)}>
-          {' '}
-          <div className={css(styles.title)}>Id vel varius mauris morbi</div>
-          <div className={css(styles.description)}>
-            In dignissim ut tortor quam. In et convallis suspendisse vel. Urna,
-            ante ut mauris, dolor interdum libero, proin accumsan, vitae. In
-            risus sit convallis volutpat.
+        <div className={css(styles.imgDiv)}>
+          <StaticImage
+            src="../../images/happyFace.png"
+            alt="robot"
+            className={css(styles.image)}
+          />
+        </div>
+        <div className={css(styles.textBox)}>
+          <div className={css(styles.textContents)}>
+            {' '}
+            <div className={css(styles.title)}>Id vel varius mauris morbi</div>
+            <div className={css(styles.description)}>
+              In dignissim ut tortor quam. In et convallis suspendisse vel.
+              Urna, ante ut mauris, dolor interdum libero, proin accumsan,
+              vitae. In risus sit convallis volutpat.
+            </div>
+            <button className={css(styles.button, styles.buttonLast)}>
+              Know More
+            </button>
           </div>
-          <button className={css(styles.button, styles.buttonLast)}>
-            Know More
-          </button>
         </div>
       </div>
     </div>
@@ -73,8 +85,8 @@ const OurInitiativesMob = () => {
 const styles = StyleSheet.create({
   root: {
     paddingTop: 40,
-    paddingLeft: 16,
-    paddingRight: 16,
+    marginLeft: 16,
+    marginRight: 16,
     display: 'flex',
     flexDirection: 'column',
   },
@@ -83,13 +95,28 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     textAlign: 'center',
   },
+  imgDiv: {
+    textAlign: 'center',
+  },
   image: {
     height: 343,
     width: 343,
     marginBottom: 32,
   },
+  textBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+  },
   textContents: {
+    maxWidth: 343,
+    display: 'flex',
+    flexDirection: 'column',
     textAlign: 'left',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   title: {
     color: COLORS.primary,
