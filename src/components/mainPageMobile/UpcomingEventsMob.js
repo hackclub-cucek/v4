@@ -79,6 +79,9 @@ const UpcomingEventsMob = () => {
           </div>
         </div>
       </div>
+      <div className={css(styles.buttonDiv)}>
+        <button className={css(styles.button)}>View All Events</button>
+      </div>
     </div>
   );
 };
@@ -148,7 +151,22 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
   },
   knowMoreL: {
-    marginBottom: 0,
+    marginBottom: 48,
+  },
+  buttonDiv: {
+    textAlign: 'center',
+  },
+  button: {
+    width: 196,
+    height: 59,
+    color: COLORS.secondary,
+    border: `2px solid ${COLORS.secondary}`,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 76,
+    fontWeight: 600,
+    fontSize: 16,
+    lineHeight: '128.7%',
+    letterSpacing: ' 0.0125em',
   },
 });
 
