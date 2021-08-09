@@ -2,7 +2,7 @@
 slug: "/posts/test"
 date: "2019-05-04"
 title: "My first blog post"
-type: "post"
+author: "emperor"
 ---
 
-# GGWP
+# This is a markdown file

@@ -2,7 +2,7 @@
 slug: "/thingswedo/skill"
 date: "2019-05-05"
 title: "Skill Enhancement"
-type: "post"
+author: "raptor"
 ---
 
 # Skill-Enhancement

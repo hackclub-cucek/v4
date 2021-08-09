@@ -2,7 +2,7 @@
 slug: "/thingswedo/networking"
 date: "2019-05-05"
 title: "Networking"
-type: "post"
+author: "raptor"
 ---
 
 # Networking
