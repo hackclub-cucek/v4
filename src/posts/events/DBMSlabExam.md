@@ -3,7 +3,7 @@ slug: "/events/dbmsexam"
 date: "2021-05-04"
 title: "DBMS LAB EXAM"
 author: "Raptor"
-previewImg: "http://www.netnic.org/wp-content/uploads/2018/12/dbms1.png"
+previewImg: "https://beginnersbook.com/wp-content/uploads/2015/04/DBMS_Schema.png"
 brief: "Get Ready for DBMS LAb exam"
 ---
 
