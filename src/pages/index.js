@@ -43,7 +43,7 @@ const IndexPage = ({data}) => {
           <HeaderMobile />
           <MainPageMobile />
         </BackgroundImage>
-        <ThingsWeDoMob />
+        <MainPageExtrasMob />
       </div>
     );
   }
