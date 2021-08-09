@@ -19,6 +19,7 @@
     "gatsby-plugin-react-helmet": "^4.10.0",
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-source-filesystem": "^3.10.0",
+    "gatsby-transformer-remark": "^4.8.0",
     "gatsby-transformer-sharp": "^3.10.0",
     "gbimage-bridge": "^0.1.4",
     "prettier": "^2.3.2",

@@ -2,31 +2,67 @@ import React from 'react';
 import {StyleSheet, css} from 'aphrodite';
 import {GatsbyImage, StaticImage} from 'gatsby-plugin-image';
 import {COLORS} from '../../styles/Colors';
+import {useStaticQuery, graphql, Link} from 'gatsby';
+
+function getEvents(data) {
+  const edges = data.allFile.edges;
+
+  let events = [];
+
+  for (let i of edges) {
+    const frontmatter = i.node.childMarkdownRemark.frontmatter;
+    events.push(frontmatter);
+  }
+
+  return events;
+}
 
 const UpcomingEvents = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allFile(
+        filter: {
+          sourceInstanceName: {eq: "posts"}
+          relativeDirectory: {eq: "events"}
+        }
+      ) {
+        edges {
+          node {
+            childMarkdownRemark {
+              frontmatter {
+                title
+                slug
+                date
+                brief
+                previewImg
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const events = getEvents(data);
   return (
     <div>
       <div className={css(styles.root)}>
-        {[0, 1, 2, 3, 5, 32, 2].map((item, id) => (
+        {events.map((item, id) => (
           <div className={css(styles.container)} key={id}>
-            <StaticImage
-              src="../../images/ihih.png"
+            <img
+              src={item.previewImg}
               alt="robot"
               className={css(styles.image)}
             />
 
-            <p className={css(styles.title)}>Google I/O 2021</p>
-            <p className={css(styles.date)}>September 1st Week</p>
-            <p className={css(styles.text)}>
-              Amet, viverra nec sed in massa nibh. Magna dapibus auctor velit,
-              est, mattis urna. Malesuada amet nisi libero, urna tristique
-              aliquam.{' '}
-            </p>
+            <p className={css(styles.title)}>{item.title}</p>
+            <p className={css(styles.date)}>{item.date}</p>
+            <p className={css(styles.text)}>{item.brief}</p>
 
-            <div className={css(styles.knowMoreContainer)}>
+            <Link to={item.slug} className={css(styles.knowMoreContainer)}>
               <p className={css(styles.moreText)}>Know More</p>
               <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
@@ -88,6 +124,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     color: COLORS.secondary,
     marginTop: 16,
+    textDecoration: 'none',
   },
   moreText: {
     fontFamily: 'Libre Franklin',
