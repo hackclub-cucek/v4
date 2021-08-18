@@ -18,6 +18,7 @@ import {GatsbyImage, getImage} from 'gatsby-plugin-image';
 import {graphql} from 'gatsby';
 import {convertToBgImage} from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
+import FooterMobile from '../components/FooterMobile';
 
 const IndexPage = ({data}) => {
   const extrasRef = useRef();
@@ -44,6 +45,7 @@ const IndexPage = ({data}) => {
           <MainPageMobile />
         </BackgroundImage>
         <MainPageExtrasMob />
+        <FooterMobile />
       </div>
     );
   }

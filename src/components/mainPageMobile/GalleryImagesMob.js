@@ -91,7 +91,7 @@ const GalleryImagesMob = () => {
 const styles = StyleSheet.create({
   root: {
     display: 'flex',
-    marginTop: 96,
+    marginTop: 40,
     overflowX: 'hidden',
     overflowY: 'hidden',
     justifyContent: 'space-evenly',
@@ -99,11 +99,11 @@ const styles = StyleSheet.create({
   },
 
   images: {
-    width: 400,
-    height: 400,
-    marginLeft: 50,
-    marginTop: 100,
-    marginBottom: 70,
+    width: 300,
+    height: 300,
+    marginLeft: 16,
+    marginTop: 16,
+    marginBottom: 24,
   },
 
   dotsConatiner: {
