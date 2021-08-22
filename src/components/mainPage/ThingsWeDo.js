@@ -19,7 +19,7 @@ const ThingsWeDo = () => {
           neque diam. Mattis molestie feugiat nisi.
         </p>
 
-        <Link to="/" className={css(styles.link)}>
+        <Link to="/thingswedo/networking" className={css(styles.link)}>
           Read More
           <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
         </Link>
@@ -37,7 +37,7 @@ const ThingsWeDo = () => {
           neque diam. Mattis molestie feugiat nisi.
         </p>
 
-        <Link to="/" className={css(styles.link)}>
+        <Link to="/thingswedo/skill" className={css(styles.link)}>
           Read More
           <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
         </Link>
