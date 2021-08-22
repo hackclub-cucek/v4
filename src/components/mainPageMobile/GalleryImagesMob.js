@@ -1,88 +1,69 @@
-import React, {useEffect, useState} from 'react';
-import {StyleSheet, css} from 'aphrodite';
-import {GatsbyImage, getImage, StaticImage} from 'gatsby-plugin-image';
-import iphoneImg from '../../images/iphone.png';
-import ihiImg from '../../images/ihih.png';
-import roboImg from '../../images/roboMan.png';
-import {AnimatePresence, motion} from 'framer-motion';
+import React from 'react';
+import {css, StyleSheet} from 'aphrodite';
+import gImage1 from '../../images/Galleryimage1.png';
+import gImage2 from '../../images/iphone.png';
+import gImage3 from '../../images/ihih.png';
+import gImage4 from '../../images/roboMan.png';
 import {COLORS} from '../../styles/Colors';
+import {useState, useEffect} from 'react';
+import {StaticImage} from 'gatsby-plugin-image';
+import {images} from 'min-document';
+import {auto} from 'async';
 
 const GalleryImagesMob = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [images, setImages] = useState([
-    iphoneImg,
-    ihiImg,
-    roboImg,
-    iphoneImg,
-    ihiImg,
-    roboImg,
+    gImage1,
+    gImage2,
+    gImage3,
+    gImage4,
+    gImage2,
+    gImage3,
+    gImage4,
   ]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setImageIndex(imageIndex + 1 == images.length ? 0 : imageIndex + 1);
     }, 2000);
-    // Clear timeout if the component is unmounted
     return () => clearTimeout(timer);
   }, [imageIndex]);
 
-  const variants = {
-    initial: {x: 420},
-    animate: {
-      x: 0,
-      scale: 1,
-    },
-    middle: {
-      scale: 1.2,
-    },
-  };
-
-  const getImages = () => {
-    const offSet = imageIndex + 3;
-    if (offSet >= images.length) {
-      return [
-        ...images.slice(imageIndex),
-        ...images.slice(0, offSet - images.length),
-      ];
-    }
-
-    return images.slice(imageIndex, offSet);
-  };
-
   return (
-    <div>
-      <div className={css(styles.root)}>
-        {getImages().map((item, id) => (
-          <motion.img
-            className={css(styles.images)}
-            key={id * imageIndex + 100 * Math.random()}
-            src={item}
-            animate={{
-              y: id === 1 ? -40 : 0,
-              scale: id === 1 ? 1.2 : 1,
-            }}
-            transition={{
-              duration: 0.5,
-            }}
-          />
-        ))}
+    <div className={css(styles.root)}>
+      <div className={css(styles.galleryImage)}>
+        <img
+          src={images[imageIndex]}
+          alt="gallery-image"
+          className={css(styles.gImage)}
+        />
       </div>
-
-      {/* Indicator for current image */}
-      <div className={css(styles.dotsConatiner)}>
-        {images.map((_item, id) => (
-          <div
-            className={
-              id === imageIndex
-                ? css(styles.dotsSelectedOuter)
-                : css(styles.dots)
-            }
-            key={id}>
-            {id === imageIndex && (
-              <div className={css(styles.dotsSelected)}></div>
-            )}
-          </div>
-        ))}
+      {/* <div className={css(styles.navDots)}>
+        <div className={css(styles.dots)}></div>
+        <div className={css(styles.dots)}></div>
+        <div className={css(styles.dots)}></div>
+        <div className={css(styles.dots, styles.dotsActive)}>
+          {' '}
+          <div className={css(styles.dotSelected)}></div>{' '}
+        </div>
+        <div className={css(styles.dots)}></div>
+        <div className={css(styles.dots)}></div>
+        <div className={css(styles.dots)}></div>
+      </div> */}
+      <div className={css(styles.navDots)}>
+        {images.map((item, id) => {
+          return (
+            <div
+              className={css(
+                imageIndex == id ? styles.dotsActive : styles.dots,
+              )}
+              key={id}>
+              {id === imageIndex && (
+                <div className={css(styles.dotSelected)}></div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -91,59 +72,51 @@ const GalleryImagesMob = () => {
 const styles = StyleSheet.create({
   root: {
     display: 'flex',
-    marginTop: 40,
-    overflowX: 'hidden',
-    overflowY: 'hidden',
-    justifyContent: 'space-evenly',
-    height: 'max-content',
-  },
-
-  images: {
-    width: 300,
-    height: 300,
+    flexDirection: 'column',
     marginLeft: 16,
-    marginTop: 16,
-    marginBottom: 24,
+    marginRight: 16,
   },
-
-  dotsConatiner: {
+  galleryImage: {
+    margin: '40px 0px 24px 0px',
+    textAlign: 'center',
+  },
+  navDots: {
     display: 'flex',
-    width: 'max-content',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    flexDirection: 'row',
+    marginLeft: 110,
+    marginRight: 110,
+    marginBottom: 32,
+    textAlign: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  gImage: {
+    textAlign: 'center',
+    width: '100%',
+    height: 'auto',
   },
   dots: {
     width: 8,
     height: 8,
+    background: COLORS.primary,
     borderRadius: 4,
-    marginLeft: 8,
-    marginRight: 8,
-    backgroundColor: COLORS.primary,
+    justifyContent: 'center',
+    maxWidth: 130,
   },
-
-  dotsSelectedOuter: {
+  dotsActive: {
     width: 20,
     height: 20,
+    // background: '#FFFFFF',
     borderRadius: 10,
-    marginLeft: 8,
-    marginRight: 8,
-    backgroundColor: COLORS.white,
     border: `1px solid ${COLORS.secondary}`,
-    display: 'flex',
+  },
+  dotSelected: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    margin: 5,
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 0,
-  },
-  dotsSelected: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: COLORS.secondary,
-  },
-  empty: {
-    width: 0,
-    height: 0,
+    background: COLORS.secondary,
   },
 });
 

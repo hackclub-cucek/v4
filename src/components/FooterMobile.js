@@ -41,26 +41,33 @@ const FooterMobile = () => {
       <div className={css(styles.socialLinks)}>
         <div className={css(styles.title)}>Social</div>
         <div className={css(styles.iconsDIv)}>
-          <StaticImage
-            src="../images/icons/twitter.png"
-            alt="twitter-social"
-            className={css(styles.socialIcons)}
-          />
-          <StaticImage
-            src="../images/icons/github.png"
-            alt="twitter-social"
-            className={css(styles.socialIcons)}
-          />
+          <Link to="https://twitter.com/hackclubcucek">
+            <StaticImage
+              src="../images/icons/twitter.png"
+              alt="twitter-social"
+              className={css(styles.socialIcons)}
+            />
+          </Link>
+          <Link to="https://github.com/hackclub-cucek">
+            <StaticImage
+              src="../images/icons/github.png"
+              alt="twitter-social"
+              className={css(styles.socialIcons)}
+            />
+          </Link>
+
           <StaticImage
             src="../images/icons/linkedin.png"
             alt="twitter-social"
             className={css(styles.socialIcons)}
           />
-          <StaticImage
-            src="../images/icons/instagram.png"
-            alt="twitter-social"
-            className={css(styles.socialIcons)}
-          />
+          <Link to="https://www.instagram.com/hackclubcucek/">
+            <StaticImage
+              src="../images/icons/instagram.png"
+              alt="twitter-social"
+              className={css(styles.socialIcons)}
+            />
+          </Link>
         </div>
         <div className={css(styles.hcFlag)}>
           <StaticImage

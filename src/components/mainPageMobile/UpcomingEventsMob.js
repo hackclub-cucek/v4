@@ -1,6 +1,9 @@
 import React from 'react';
 import {css, StyleSheet} from 'aphrodite';
 import {StaticImage} from 'gatsby-plugin-image';
+import image1 from '../../images/googleEvents.png';
+import image2 from '../../images/hackFest.png';
+import image3 from '../../images/dev.png';
 import {COLORS} from '../../styles/Colors';
 import {Link} from 'gatsby';
 
@@ -9,11 +12,7 @@ const UpcomingEventsMob = () => {
     <div className={css(styles.root)}>
       <div className={css(styles.container)}>
         <div className={css(styles.imgDiv)}>
-          <StaticImage
-            src="../../images/googleEvents.png"
-            alt="robot"
-            className={css(styles.image)}
-          />
+          <img src={image1} alt="robot" className={css(styles.image)} />
         </div>
         <div className={css(styles.textBox)}>
           <div className={css(styles.textContents)}>
@@ -33,11 +32,7 @@ const UpcomingEventsMob = () => {
       </div>
       <div className={css(styles.container)}>
         <div className={css(styles.imgDiv)}>
-          <StaticImage
-            src="../../images/hackFest.png"
-            alt="robot"
-            className={css(styles.image)}
-          />
+          <img src={image2} alt="robot" className={css(styles.image)} />
         </div>
         <div className={css(styles.textBox)}>
           <div className={css(styles.textContents)}>
@@ -57,11 +52,7 @@ const UpcomingEventsMob = () => {
       </div>
       <div className={css(styles.container)}>
         <div className={css(styles.imgDiv)}>
-          <StaticImage
-            src="../../images/dev.png"
-            alt="robot"
-            className={css(styles.image)}
-          />
+          <img src={image3} alt="robot" className={css(styles.image)} />
         </div>
         <div className={css(styles.textBox)}>
           <div className={css(styles.textContents)}>
@@ -103,8 +94,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   image: {
-    height: 343,
-    width: 343,
+    height: 'auto',
+    width: '100%',
     marginBottom: 32,
   },
   textBox: {
@@ -115,7 +106,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   textContents: {
-    maxWidth: 343,
+    maxWidth: 'auto',
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'left',
