@@ -80,15 +80,18 @@ const UpcomingEventsMob = () => {
 const styles = StyleSheet.create({
   root: {
     paddingTop: 40,
-    marginLeft: 16,
-    marginRight: 16,
+    marginLeft: 'auto',
+    marginRight: 'auto',
     display: 'flex',
     flexDirection: 'column',
+    maxWidth: 550,
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
+    marginLeft: 16,
+    marginRight: 16,
   },
   imgDiv: {
     textAlign: 'center',

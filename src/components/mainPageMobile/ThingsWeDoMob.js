@@ -65,14 +65,17 @@ const styles = StyleSheet.create({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    marginLeft: 16,
-    marginRight: 16,
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginTop: 40,
+    maxWidth: 550,
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'center',
+    marginLeft: 16,
+    marginRight: 16,
   },
   iconContainer: {
     textAlign: 'center',

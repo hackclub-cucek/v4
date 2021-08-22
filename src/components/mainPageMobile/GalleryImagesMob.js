@@ -31,39 +31,30 @@ const GalleryImagesMob = () => {
 
   return (
     <div className={css(styles.root)}>
-      <div className={css(styles.galleryImage)}>
-        <img
-          src={images[imageIndex]}
-          alt="gallery-image"
-          className={css(styles.gImage)}
-        />
-      </div>
-      {/* <div className={css(styles.navDots)}>
-        <div className={css(styles.dots)}></div>
-        <div className={css(styles.dots)}></div>
-        <div className={css(styles.dots)}></div>
-        <div className={css(styles.dots, styles.dotsActive)}>
-          {' '}
-          <div className={css(styles.dotSelected)}></div>{' '}
+      <div className={css(styles.container)}>
+        <div className={css(styles.galleryImage)}>
+          <img
+            src={images[imageIndex]}
+            alt="gallery-image"
+            className={css(styles.gImage)}
+          />
         </div>
-        <div className={css(styles.dots)}></div>
-        <div className={css(styles.dots)}></div>
-        <div className={css(styles.dots)}></div>
-      </div> */}
-      <div className={css(styles.navDots)}>
-        {images.map((item, id) => {
-          return (
-            <div
-              className={css(
-                imageIndex == id ? styles.dotsActive : styles.dots,
-              )}
-              key={id}>
-              {id === imageIndex && (
-                <div className={css(styles.dotSelected)}></div>
-              )}
-            </div>
-          );
-        })}
+
+        <div className={css(styles.navDots)}>
+          {images.map((item, id) => {
+            return (
+              <div
+                className={css(
+                  imageIndex == id ? styles.dotsActive : styles.dots,
+                )}
+                key={id}>
+                {id === imageIndex && (
+                  <div className={css(styles.dotSelected)}></div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -73,6 +64,11 @@ const styles = StyleSheet.create({
   root: {
     display: 'flex',
     flexDirection: 'column',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxWidth: 550,
+  },
+  container: {
     marginLeft: 16,
     marginRight: 16,
   },
@@ -106,7 +102,6 @@ const styles = StyleSheet.create({
   dotsActive: {
     width: 20,
     height: 20,
-    // background: '#FFFFFF',
     borderRadius: 10,
     border: `1px solid ${COLORS.secondary}`,
   },
