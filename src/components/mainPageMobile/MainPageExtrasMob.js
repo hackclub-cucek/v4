@@ -5,7 +5,8 @@ import TitleWithRectMob from './TitleWithRectMob';
 import ThingsWeDoMob from './ThingsWeDoMob';
 import OurInitiativesMob from './OurInitiativesMob';
 import UpcomingEventsMob from './UpcomingEventsMob';
-import GalleryImages from './GalleryImages';
+import GalleryImages from './GalleryImagesMob';
+import GalleryImagesMob from './GalleryImagesMob';
 
 const MainPageExtras = ({ref}) => {
   return (
@@ -23,7 +24,7 @@ const MainPageExtras = ({ref}) => {
 
       <div className={css(styles.space)} />
       <TitleWithRectMob name="Gallery" />
-      <GalleryImages />
+      <GalleryImagesMob />
     </div>
   );
 };

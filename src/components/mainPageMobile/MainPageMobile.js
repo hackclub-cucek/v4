@@ -21,10 +21,8 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    marginTop: 161,
-    marginBottom: 100,
-    marginRight: 16,
-    marginLeft: 16,
+
+    margin: '161px 16px 100px 16px',
   },
   mainTitle: {
     color: '#FFFFFF',
