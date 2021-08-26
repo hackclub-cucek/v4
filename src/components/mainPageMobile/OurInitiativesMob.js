@@ -56,7 +56,6 @@ const OurInitiativesMob = () => {
         </div>
         <div className={css(styles.textBox)}>
           <div className={css(styles.textContents)}>
-            {' '}
             <div className={css(styles.title)}>Id vel varius mauris morbi</div>
             <div className={css(styles.description)}>
               In dignissim ut tortor quam. In et convallis suspendisse vel.
