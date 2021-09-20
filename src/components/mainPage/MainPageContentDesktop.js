@@ -3,7 +3,7 @@ import React from 'react';
 import {COLORS} from '../../styles/Colors';
 import {StyleSheet, css} from 'aphrodite';
 
-const MainPageContentDesktop = ({pressHandler}) => {
+const MainPageContentDesktop = ({title, text, buttonText, pressHandler}) => {
   return (
     <div className={css(styles.container)}>
       <p className={css(styles.title)}>Hack Club CUCEK</p>
