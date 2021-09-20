@@ -8,6 +8,8 @@ import {getImage} from 'gatsby-plugin-image';
 import {graphql} from 'gatsby';
 import {convertToBgImage} from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
+import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
+import UpcomingEvents from '../components/mainPage/UpcomingEvents';
 
 const Events = ({data}) => {
   const image = getImage(data.file);
@@ -21,7 +23,15 @@ const Events = ({data}) => {
         preserveStackingContext
         className={css(styles.rootDesktop)}>
         <HeaderDesktop />
+        <MainPageContentDesktop
+          title="Events"
+          details={
+            'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
+          }
+        />
       </BackgroundImage>
+
+      <UpcomingEvents limit={25} />
       <FooterDesktop />
     </div>
   );
@@ -29,7 +39,7 @@ const Events = ({data}) => {
 
 const styles = StyleSheet.create({
   rootDesktop: {
-    height: '60vh',
+    height: '50vh',
     display: 'flex',
     flexDirection: 'column',
     backgroundPosition: 'left 0px top 0px',

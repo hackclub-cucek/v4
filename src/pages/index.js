@@ -1,20 +1,16 @@
 /* eslint-disable react/prop-types */
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import HeaderDesktop from '../components/HeaderDesktop';
 import {StyleSheet, css} from 'aphrodite';
-import background from '../images/bgDesktop.png';
 import '../styles/Global.css';
-import {getDeviceDimention} from '../components/Utility';
 import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
 import MainPageExtras from '../components/mainPage/MainPageExtras';
 import MainPageExtrasMob from '../components/mainPageMobile/MainPageExtrasMob';
 import HeaderMobile from '../components/HeaderMobile';
 import MainPageMobile from '../components/mainPageMobile/MainPageMobile';
 import FooterDesktop from '../components/FooterDesktop';
-// import {StaticImage} from 'gatsby-plugin-image';
-import ThingsWeDoMob from '../components/mainPageMobile/ThingsWeDoMob';
 import useDeviceType from '../components/hooks/useDeviceType';
-import {GatsbyImage, getImage} from 'gatsby-plugin-image';
+import {getImage} from 'gatsby-plugin-image';
 import {graphql} from 'gatsby';
 import {convertToBgImage} from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
@@ -59,7 +55,14 @@ const IndexPage = ({data}) => {
         preserveStackingContext
         className={css(styles.rootDesktop)}>
         <HeaderDesktop />
-        <MainPageContentDesktop pressHandler={handleOurVisionPress} />
+        <MainPageContentDesktop
+          pressHandler={handleOurVisionPress}
+          title="Hackclub Cucek"
+          details={
+            'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
+          }
+          buttonText="Our Vision"
+        />
       </BackgroundImage>
       <div ref={extrasRef}></div>
       <MainPageExtras ref={extrasRef} />
