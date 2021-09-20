@@ -1,52 +1,20 @@
 /* eslint-disable react/prop-types */
-import React, {useRef} from 'react';
+import React from 'react';
 import HeaderDesktop from '../components/HeaderDesktop';
 import {StyleSheet, css} from 'aphrodite';
 import '../styles/Global.css';
-import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
-import MainPageExtras from '../components/mainPage/MainPageExtras';
-import MainPageExtrasMob from '../components/mainPageMobile/MainPageExtrasMob';
-import HeaderMobile from '../components/HeaderMobile';
-import MainPageMobile from '../components/mainPageMobile/MainPageMobile';
 import FooterDesktop from '../components/FooterDesktop';
-import useDeviceType from '../components/hooks/useDeviceType';
 import {getImage} from 'gatsby-plugin-image';
 import {graphql} from 'gatsby';
 import {convertToBgImage} from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
-import FooterMobile from '../components/FooterMobile';
+import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
+import UpcomingEvents from '../components/mainPage/UpcomingEvents';
 
-const IndexPage = ({data}) => {
-  const extrasRef = useRef();
-  const deviceType = useDeviceType();
-
-  // Function to scroll down
-  const handleOurVisionPress = () => {
-    extrasRef.current.scrollIntoView({behavior: 'smooth'});
-  };
-
+const Events = ({data}) => {
   const image = getImage(data.file);
   const bgImage = convertToBgImage(image);
 
-  if (deviceType === 'mobile') {
-    //Mobile page
-    return (
-      <div>
-        <BackgroundImage
-          Tag="section"
-          {...bgImage}
-          preserveStackingContext
-          className={css(styles.rootMobile)}>
-          <HeaderMobile />
-          <MainPageMobile />
-        </BackgroundImage>
-        <MainPageExtrasMob />
-        <FooterMobile />
-      </div>
-    );
-  }
-
-  // Desktop Page
   return (
     <div>
       <BackgroundImage
@@ -56,16 +24,14 @@ const IndexPage = ({data}) => {
         className={css(styles.rootDesktop)}>
         <HeaderDesktop />
         <MainPageContentDesktop
-          pressHandler={handleOurVisionPress}
-          title="Hackclub Cucek"
+          title="Events"
           details={
             'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
           }
-          buttonText="Our Vision"
         />
       </BackgroundImage>
-      <div ref={extrasRef}></div>
-      <MainPageExtras ref={extrasRef} />
+
+      <UpcomingEvents limit={25} />
       <FooterDesktop />
     </div>
   );
@@ -73,7 +39,7 @@ const IndexPage = ({data}) => {
 
 const styles = StyleSheet.create({
   rootDesktop: {
-    height: '100vh',
+    height: '50vh',
     display: 'flex',
     flexDirection: 'column',
     backgroundPosition: 'left 0px top 0px',
@@ -91,7 +57,7 @@ const styles = StyleSheet.create({
 });
 
 export const pageQuery = graphql`
-  query MyQuery {
+  query MyQuery2 {
     file(relativePath: {eq: "bgDesktop.png"}) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -100,4 +66,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default IndexPage;
+export default Events;

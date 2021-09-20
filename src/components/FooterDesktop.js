@@ -22,6 +22,7 @@ const FooterDesktop = () => {
           P.O, Alleppey, 688504, Kerala
         </p>
         <p className={css(styles.text)}>
+          {' '}
           All Rights Reserved 2021, Hack Club CUCEK Designed with ❤️ by
           @akhil__tj
         </p>

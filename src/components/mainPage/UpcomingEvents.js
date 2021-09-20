@@ -1,23 +1,29 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {StyleSheet, css} from 'aphrodite';
-import {GatsbyImage, StaticImage} from 'gatsby-plugin-image';
+// import {GatsbyImage, StaticImage} from 'gatsby-plugin-image';
 import {COLORS} from '../../styles/Colors';
 import {useStaticQuery, graphql, Link} from 'gatsby';
 
-function getEvents(data) {
+function getEvents(data, limit) {
   const edges = data.allFile.edges;
 
   let events = [];
 
   for (let i of edges) {
+    if (limit == 0) {
+      break;
+    }
+
     const frontmatter = i.node.childMarkdownRemark.frontmatter;
     events.push(frontmatter);
+    limit--;
   }
 
   return events;
 }
 
-const UpcomingEvents = () => {
+const UpcomingEvents = ({limit = 6}) => {
   const data = useStaticQuery(graphql`
     {
       allFile(
@@ -43,7 +49,7 @@ const UpcomingEvents = () => {
     }
   `);
 
-  const events = getEvents(data);
+  const events = getEvents(data, limit);
   return (
     <div>
       <div className={css(styles.root)}>
