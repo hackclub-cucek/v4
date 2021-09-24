@@ -11,7 +11,7 @@ const routes = [
   },
   {
     name: 'Our Team',
-    path: '/team',
+    path: '/members',
   },
   {
     name: 'Join US',
@@ -30,14 +30,16 @@ const routes = [
 const HeaderDesktop = () => {
   return (
     <div className={css(styles.root)}>
-      <StaticImage
-        src="../images/hackClubFlag.png"
-        quality={95}
-        // formats={['AUTO', 'WEBP', 'AVIF']}
-        alt="flag"
-        imgClassName={css(styles.flag)}
-        style={{marginLeft: 40}}
-      />
+      <Link to="/">
+        <StaticImage
+          src="../images/hackClubFlag.png"
+          quality={95}
+          // formats={['AUTO', 'WEBP', 'AVIF']}
+          alt="flag"
+          imgClassName={css(styles.flag)}
+          style={{marginLeft: 40}}
+        />
+      </Link>
 
       <div className={css(styles.navBar)}>
         {routes.map((item, id) => (
