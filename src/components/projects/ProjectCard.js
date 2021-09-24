@@ -25,7 +25,7 @@ const ProjectCard = () => {
               <i class="ri-star-line"></i>42
             </span>
             <span>
-              <i class="ri-git-merge-line"></i>6
+              <i class="ri-git-branch-fill"></i>6
             </span>
           </div>
         </div>
