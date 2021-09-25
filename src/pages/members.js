@@ -1,52 +1,20 @@
 /* eslint-disable react/prop-types */
-import React, {useRef} from 'react';
+import React from 'react';
 import HeaderDesktop from '../components/HeaderDesktop';
 import {StyleSheet, css} from 'aphrodite';
 import '../styles/Global.css';
-import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
-import MainPageExtras from '../components/mainPage/MainPageExtras';
-import MainPageExtrasMob from '../components/mainPageMobile/MainPageExtrasMob';
-import HeaderMobile from '../components/HeaderMobile';
-import MainPageMobile from '../components/mainPageMobile/MainPageMobile';
 import FooterDesktop from '../components/FooterDesktop';
-import useDeviceType from '../components/hooks/useDeviceType';
 import {getImage} from 'gatsby-plugin-image';
 import {graphql} from 'gatsby';
 import {convertToBgImage} from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
-import FooterMobile from '../components/FooterMobile';
+import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
+import {COLORS} from '../styles/Colors';
+import MemberCard from '../components/members/MemberCard';
 
-const IndexPage = ({data}) => {
-  const extrasRef = useRef();
-  const deviceType = useDeviceType();
-
-  // Function to scroll down
-  const handleOurVisionPress = () => {
-    extrasRef.current.scrollIntoView({behavior: 'smooth'});
-  };
-
+const Members = ({data}) => {
   const image = getImage(data.file);
   const bgImage = convertToBgImage(image);
-
-  if (deviceType === 'mobile') {
-    //Mobile page
-    return (
-      <div>
-        <BackgroundImage
-          Tag="section"
-          {...bgImage}
-          preserveStackingContext
-          className={css(styles.rootMobile)}>
-          <HeaderMobile />
-          <MainPageMobile />
-        </BackgroundImage>
-        <MainPageExtrasMob />
-        <FooterMobile />
-      </div>
-    );
-  }
-
-  // Desktop Page
   return (
     <div>
       <BackgroundImage
@@ -56,16 +24,25 @@ const IndexPage = ({data}) => {
         className={css(styles.rootDesktop)}>
         <HeaderDesktop />
         <MainPageContentDesktop
-          pressHandler={handleOurVisionPress}
-          title="Hackclub Cucek"
+          pressHandler={() => {}}
+          buttonText="Add Your Profile"
+          title="Members"
           details={
             'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
           }
-          buttonText="Our Vision"
         />
       </BackgroundImage>
-      <div ref={extrasRef}></div>
-      <MainPageExtras ref={extrasRef} />
+
+      <div className={css(styles.contents)}>
+        <div className={css(styles.cardRow)}>
+          {[...Array(9).keys()].map((item, id) => (
+            <div key={id}>
+              <MemberCard />
+            </div>
+          ))}
+        </div>
+        <button className={css(styles.buttonBottom)}> View More</button>
+      </div>
       <FooterDesktop />
     </div>
   );
@@ -73,7 +50,7 @@ const IndexPage = ({data}) => {
 
 const styles = StyleSheet.create({
   rootDesktop: {
-    height: '100vh',
+    height: 600,
     display: 'flex',
     flexDirection: 'column',
     backgroundPosition: 'left 0px top 0px',
@@ -88,11 +65,42 @@ const styles = StyleSheet.create({
       backgroundPosition: 'left -375px top 0px',
     },
   },
+  contents: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxWidth: 1240,
+    marginTop: 50,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardRow: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    width: 1240,
+    justifyContent: 'space-between',
+    gap: 32,
+  },
+  buttonBottom: {
+    width: 156,
+    height: 64,
+    border: `2px solid ${COLORS.secondary}`,
+    borderRadius: 76,
+    background: COLORS.white,
+    color: COLORS.secondary,
+    fontWeight: 600,
+    fontSize: 20,
+    lineHeight: '26px',
+    letterSpacing: '.0125em',
+    textAlign: 'center',
+    marginTop: 64,
+  },
 });
 
 export const pageQuery = graphql`
-  query MyQuery {
-    file(relativePath: {eq: "bgDesktop.png"}) {
+  query MyQuery4 {
+    file(relativePath: {eq: "bgMembers.png"}) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
@@ -100,4 +108,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default IndexPage;
+export default Members;

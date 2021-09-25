@@ -11,7 +11,7 @@ const routes = [
   },
   {
     name: 'Our Team',
-    path: '/team',
+    path: '/members',
   },
   {
     name: 'Join US',
@@ -30,14 +30,18 @@ const routes = [
 const HeaderDesktop = () => {
   return (
     <div className={css(styles.root)}>
-      <StaticImage
-        src="../images/hackClubFlag.png"
-        quality={95}
-        // formats={['AUTO', 'WEBP', 'AVIF']}
-        alt="flag"
-        imgClassName={css(styles.flag)}
-        style={{marginLeft: 40}}
-      />
+      <Link to="/">
+        <StaticImage
+          height={96}
+          src="../images/hackClubFlag.png"
+          quality={95}
+          // formats={['AUTO', 'WEBP', 'AVIF']}
+          alt="flag"
+          imgClassName={css(styles.flag)}
+          style={{marginLeft: 40}}
+          imgStyle={{maxHeight: 96}}
+        />
+      </Link>
 
       <div className={css(styles.navBar)}>
         {routes.map((item, id) => (
@@ -49,21 +53,34 @@ const HeaderDesktop = () => {
 
       <div className={css(styles.socialContainer)}>
         <StaticImage
+          onClick={() => {
+            window.location.href = 'https://twitter.com/hackclubcucek';
+          }}
           src="../images/icons/twitter.png"
           alt="twitter-social"
           className={css(styles.socialIcons)}
         />
         <StaticImage
+          onClick={() => {
+            window.location.href = 'https://github.com/hackclub-cucek';
+          }}
           src="../images/icons/github.png"
           alt="github-social"
           className={css(styles.socialIcons)}
         />
         <StaticImage
+          onClick={() => {
+            window.location.href =
+              'https://www.linkedin.com/company/hackclubcucek/';
+          }}
           src="../images/icons/linkedin.png"
           alt="linkedin-social"
           className={css(styles.socialIcons)}
         />
         <StaticImage
+          onClick={() => {
+            window.location.href = 'https://www.instagram.com/hackclubcucek';
+          }}
           src="../images/icons/instagram.png"
           alt="instagram-social"
           className={css(styles.socialIcons)}
@@ -79,6 +96,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     color: COLORS.white,
+    maxHeight: 96,
+    alignItems: 'center',
   },
   flag: {
     width: '100%',
@@ -115,7 +134,10 @@ const styles = StyleSheet.create({
   socialIcons: {
     marginLeft: 8,
     marginRight: 8,
-    marginBottom: 20,
+    // marginBottom: 20,
+    maxWidth: 28,
+    maxHeight: 28,
+    cursor: 'pointer',
   },
 });
 

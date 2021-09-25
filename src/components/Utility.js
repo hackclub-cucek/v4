@@ -1,3 +1,5 @@
+import {useEffect, useState} from 'react';
+
 export function getDeviceDimention() {
   let width = 0;
   let height = 0;

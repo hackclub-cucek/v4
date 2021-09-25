@@ -3,18 +3,24 @@ import React from 'react';
 import {COLORS} from '../../styles/Colors';
 import {StyleSheet, css} from 'aphrodite';
 
-const MainPageContentDesktop = ({pressHandler}) => {
+const MainPageContentDesktop = ({
+  title,
+  details,
+  buttonText = null,
+  pressHandler,
+}) => {
   return (
     <div className={css(styles.container)}>
-      <p className={css(styles.title)}>Hack Club CUCEK</p>
-      <p className={css(styles.details)}>
-        A nonprofit network of high school coding clubs and makers around the
-        world, for the students, by the students.
-      </p>
-      <button className={css(styles.button)} onClick={pressHandler}>
-        Our Vision
-        <i className="ri-arrow-right-line"></i>
-      </button>
+      <p className={css(styles.title)}>{title}</p>
+      <p className={css(styles.details)}>{details}</p>
+
+      {buttonText && (
+        <button className={css(styles.button)} onClick={pressHandler}>
+          {buttonText}
+          {/* Our Vision */}
+          <i className="ri-arrow-right-line"></i>
+        </button>
+      )}
     </div>
   );
 };
@@ -70,7 +76,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    width: 270,
+    // width: 270,
     marginTop: 54,
     borderTopStyle: 'hidden',
     borderRightStyle: 'hidden',
