@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    width: 270,
+    // width: 270,
     marginTop: 54,
     borderTopStyle: 'hidden',
     borderRightStyle: 'hidden',
