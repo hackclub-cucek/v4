@@ -29,7 +29,7 @@ const Projects = ({data}) => {
           details={
             'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
           }
-          buttonText="Add Your Project."
+          buttonText="Add Your Project"
         />
       </BackgroundImage>
 
@@ -50,7 +50,7 @@ const Projects = ({data}) => {
 
 const styles = StyleSheet.create({
   rootDesktop: {
-    height: '50vh',
+    height: 600,
     display: 'flex',
     flexDirection: 'column',
     backgroundPosition: 'left 0px top 0px',
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
 
 export const pageQuery = graphql`
   query MyQuery3 {
-    file(relativePath: {eq: "bgDesktop.png"}) {
+    file(relativePath: {eq: "bgProjects.png"}) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }

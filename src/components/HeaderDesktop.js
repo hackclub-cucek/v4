@@ -32,12 +32,14 @@ const HeaderDesktop = () => {
     <div className={css(styles.root)}>
       <Link to="/">
         <StaticImage
+          height={96}
           src="../images/hackClubFlag.png"
           quality={95}
           // formats={['AUTO', 'WEBP', 'AVIF']}
           alt="flag"
           imgClassName={css(styles.flag)}
           style={{marginLeft: 40}}
+          imgStyle={{maxHeight: 96}}
         />
       </Link>
 
@@ -94,6 +96,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     color: COLORS.white,
+    maxHeight: 96,
+    alignItems: 'center',
   },
   flag: {
     width: '100%',
@@ -130,7 +134,9 @@ const styles = StyleSheet.create({
   socialIcons: {
     marginLeft: 8,
     marginRight: 8,
-    marginBottom: 20,
+    // marginBottom: 20,
+    maxWidth: 28,
+    maxHeight: 28,
     cursor: 'pointer',
   },
 });
