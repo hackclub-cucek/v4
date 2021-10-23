@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import HeaderDesktop from '../components/HeaderDesktop';
 import {StyleSheet, css} from 'aphrodite';
@@ -24,7 +25,8 @@ const Members = ({data}) => {
         <HeaderDesktop />
         <MainPageContentDesktop
           pressHandler={() => {}}
-          title="Projects"
+          buttonText="Add Your Profile"
+          title="Members"
           details={
             'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
           }
@@ -34,7 +36,7 @@ const Members = ({data}) => {
       <div className={css(styles.contents)}>
         <div className={css(styles.cardRow)}>
           {[...Array(9).keys()].map((item, id) => (
-            <div>
+            <div key={id}>
               <MemberCard />
             </div>
           ))}
@@ -48,7 +50,7 @@ const Members = ({data}) => {
 
 const styles = StyleSheet.create({
   rootDesktop: {
-    height: '50vh',
+    height: 600,
     display: 'flex',
     flexDirection: 'column',
     backgroundPosition: 'left 0px top 0px',
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
 
 export const pageQuery = graphql`
   query MyQuery4 {
-    file(relativePath: {eq: "bgDesktop.png"}) {
+    file(relativePath: {eq: "bgMembers.png"}) {
       childImageSharp {
         gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
       }
