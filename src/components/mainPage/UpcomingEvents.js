@@ -1,76 +1,66 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
 import {StyleSheet, css} from 'aphrodite';
-// import {GatsbyImage, StaticImage} from 'gatsby-plugin-image';
+import React from 'react';
 import {COLORS} from '../../styles/Colors';
-import {useStaticQuery, graphql, Link} from 'gatsby';
+import Badge from '../../images/icons/badge.png';
+import {Link} from 'gatsby';
+import {getEvents} from '../../api/event';
+import {useState, useEffect} from 'react';
+import {start} from 'xstate/lib/actions';
 
-function getEvents(data, limit) {
-  const edges = data.allFile.edges;
-
-  let events = [];
-
-  for (let i of edges) {
-    if (limit == 0) {
-      break;
-    }
-
-    const frontmatter = i.node.childMarkdownRemark.frontmatter;
-    events.push(frontmatter);
-    limit--;
-  }
-
-  return events;
-}
-
-const UpcomingEvents = ({limit = 6}) => {
-  const data = useStaticQuery(graphql`
-    {
-      allFile(
-        filter: {
-          sourceInstanceName: {eq: "posts"}
-          relativeDirectory: {eq: "events"}
-        }
-      ) {
-        edges {
-          node {
-            childMarkdownRemark {
-              frontmatter {
-                title
-                slug
-                date
-                brief
-                previewImg
-              }
-            }
+const GenerateCard = ({item}) => {
+  return (
+    <div className={css(styles.container)}>
+      <div>
+        <img
+          src={item.Photo_Link_1}
+          alt="robot"
+          className={css(styles.image)}
+        />
+        <img
+          src={Badge}
+          alt="Badge"
+          className={
+            item.Label === 'upcoming'
+              ? css(styles.badgeActive)
+              : css(styles.badge)
           }
-        }
-      }
-    }
-  `);
+        />
 
-  const events = getEvents(data, limit);
+        <p className={css(styles.title)}>{item['Event_Headline ']}</p>
+        <p className={css(styles.date)}>{item.Date}</p>
+        <p className={css(styles.text)}>{item['Event_Description ']}</p>
+      </div>
+
+      <div>
+        <Link to="/" className={css(styles.knowMoreContainer)}>
+          <p className={css(styles.moreText)}>Know More</p>
+
+          <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const UpcomingEvents = () => {
+  const [upcomingEvents, setUpcomingEvents] = useState();
+
+  useEffect(() => {
+    getEvents().then(data => {
+      setUpcomingEvents(data);
+      console.log(data);
+    });
+  }, []);
+
   return (
     <div>
       <div className={css(styles.root)}>
-        {events.map((item, id) => (
-          <div className={css(styles.container)} key={id}>
-            <img
-              src={item.previewImg}
-              alt="robot"
-              className={css(styles.image)}
-            />
-
-            <p className={css(styles.title)}>{item.title}</p>
-            <p className={css(styles.date)}>{item.date}</p>
-            <p className={css(styles.text)}>{item.brief}</p>
-
-            <Link to={item.slug} className={css(styles.knowMoreContainer)}>
-              <p className={css(styles.moreText)}>Know More</p>
-              <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
-            </Link>
-          </div>
-        ))}
+        <div className={css(styles.cards)}>
+          {upcomingEvents &&
+            upcomingEvents.map(item => {
+              return <GenerateCard item={item} />;
+            })}
+        </div>
       </div>
       <div className={css(styles.centerDiv)}>
         <button className={css(styles.viewMoreButton)}>View All Events</button>
@@ -88,15 +78,33 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
   },
+  cards: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    rowGap: 80,
+    columnGap: 83,
+  },
+
   container: {
     width: 357,
-    marginBottom: 80,
-    marginLeft: 10,
-    marginRight: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    position: 'relative',
   },
   image: {
     width: 357,
     height: 357,
+    zIndex: 1,
+  },
+  badgeActive: {
+    position: 'absolute',
+    top: 1,
+    left: 1,
+    zIndex: 2,
+  },
+  badge: {
+    display: 'none',
   },
   title: {
     fontFamily: 'Libre Franklin',
@@ -124,6 +132,8 @@ const styles = StyleSheet.create({
     fontSize: '20px',
     lineHeight: '152%',
     color: COLORS.primary,
+    maxHeight: 120,
+    height: 120,
   },
   knowMoreContainer: {
     display: 'flex',
