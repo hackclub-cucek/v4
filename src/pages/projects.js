@@ -26,9 +26,7 @@ const Projects = ({data}) => {
         <MainPageContentDesktop
           pressHandler={() => {}}
           title="Projects"
-          details={
-            'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
-          }
+          details={'These are the some projects done by hack clubers'}
           buttonText="Add Your Project"
         />
       </BackgroundImage>

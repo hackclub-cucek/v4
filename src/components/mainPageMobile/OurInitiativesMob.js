@@ -16,11 +16,10 @@ const OurInitiativesMob = () => {
         <div className={css(styles.textBox)}>
           <div className={css(styles.textContents)}>
             {' '}
-            <div className={css(styles.title)}>Id vel varius mauris morbi</div>
+            <div className={css(styles.title)}>Learn From Home</div>
             <div className={css(styles.description)}>
-              In dignissim ut tortor quam. In et convallis suspendisse vel.
-              Urna, ante ut mauris, dolor interdum libero, proin accumsan,
-              vitae. In risus sit convallis volutpat.
+              Flagship event of Hack Club CUCEK to learn and work on all cutting
+              edge technology.
             </div>
             <div className={css(styles.uoList)}>
               <ul className={css(styles.listCont)}>
@@ -40,11 +39,9 @@ const OurInitiativesMob = () => {
         <div className={css(styles.textBox)}>
           <div className={css(styles.textContents)}>
             {' '}
-            <div className={css(styles.title)}>Id vel varius mauris morbi</div>
+            <div className={css(styles.title)}>Hacktoberfest</div>
             <div className={css(styles.description)}>
-              In dignissim ut tortor quam. In et convallis suspendisse vel.
-              Urna, ante ut mauris, dolor interdum libero, proin accumsan,
-              vitae. In risus sit convallis volutpat.
+              One month to promote opensource contributions.
             </div>
             <button className={css(styles.button)}> Know More</button>
           </div>
@@ -56,11 +53,9 @@ const OurInitiativesMob = () => {
         </div>
         <div className={css(styles.textBox)}>
           <div className={css(styles.textContents)}>
-            <div className={css(styles.title)}>Id vel varius mauris morbi</div>
+            <div className={css(styles.title)}>Happy Hour</div>
             <div className={css(styles.description)}>
-              In dignissim ut tortor quam. In et convallis suspendisse vel.
-              Urna, ante ut mauris, dolor interdum libero, proin accumsan,
-              vitae. In risus sit convallis volutpat.
+              Weekly meetup of hack clubers
             </div>
             <button className={css(styles.button, styles.buttonLast)}>
               Know More
