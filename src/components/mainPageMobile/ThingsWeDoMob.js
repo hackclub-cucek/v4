@@ -17,8 +17,8 @@ const ThingsWeDoMob = () => {
         </div>
         <div className={css(styles.containerTitle)}>Networking</div>
         <div className={css(styles.description)}>
-          Bibendum etiam nec massa ok ok bendum etiam nec massa ok ok posuere
-          neque diam. Mattis molestie feugiat nisi nec massa ok.
+          You can meet amazing people around you. Who are always ready to
+          support you.
         </div>
         <Link to="/" className={css(styles.readMore)}>
           Read More
@@ -34,8 +34,8 @@ const ThingsWeDoMob = () => {
         </div>
         <div className={css(styles.containerTitle)}>Skill Enhancement</div>
         <div className={css(styles.description)}>
-          Pellentesque iaculis erat molestie bendum etiam nec massa ok ok proin
-          consectetur dignissim cc nisi, lacus iaculis erat.
+          Togather we can develop our skills thorugh various learning
+          initiatives.
         </div>
         <Link to="/" className={css(styles.readMore)}>
           Read More
@@ -49,10 +49,10 @@ const ThingsWeDoMob = () => {
             alt="Heart Icon"
           />
         </div>
-        <div className={css(styles.containerTitle)}>Software Development</div>
+        <div className={css(styles.containerTitle)}>Development</div>
         <div className={css(styles.description)}>
-          Suspendisse libero amet, pharetr spendisse libero amet, pharetr
-          Posuere sem ullamcol ok id at okok lobortis.
+          We can build solutions for real life problems and develop millions of
+          lives.
         </div>
         <Link to="/" className={css(styles.readMoreLast)}>
           Read More

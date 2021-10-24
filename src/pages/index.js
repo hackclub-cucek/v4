@@ -59,9 +59,9 @@ const IndexPage = ({data}) => {
           pressHandler={handleOurVisionPress}
           title="Hackclub Cucek"
           details={
-            'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
+            'Looking for a tech group accepted worldwide from our college? You just got into the right place!'
           }
-          buttonText="Our Vision"
+          buttonText="Begin With Us"
         />
       </BackgroundImage>
       <div ref={extrasRef}></div>

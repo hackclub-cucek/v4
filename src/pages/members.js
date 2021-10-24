@@ -28,7 +28,7 @@ const Members = ({data}) => {
           buttonText="Add Your Profile"
           title="Members"
           details={
-            'A nonprofit network of high school coding clubs and makers around the world, for the students, by the students.'
+            'These are the amazing people who are working to make this happen'
           }
         />
       </BackgroundImage>

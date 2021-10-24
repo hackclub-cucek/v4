@@ -15,14 +15,15 @@ const ThingsWeDo = () => {
         />
         <p className={css(styles.title)}>Networking</p>
         <p className={css(styles.text)}>
-          Bibendum etiam nec massa ok ok bendum etiam nec massa ok ok posuere
-          neque diam. Mattis molestie feugiat nisi.
+          You can meet amazing people around you. Who are always ready to
+          support you.
         </p>
-
+        {/* commented links  */}
+        {/* 
         <Link to="/thingswedo/networking" className={css(styles.link)}>
           Read More
           <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
-        </Link>
+        </Link> */}
       </div>
 
       <div className={css(styles.itemContainer)}>
@@ -33,14 +34,15 @@ const ThingsWeDo = () => {
         />
         <p className={css(styles.title)}>Skill Enhancement</p>
         <p className={css(styles.text)}>
-          Bibendum etiam nec massa ok ok bendum etiam nec massa ok ok posuere
-          neque diam. Mattis molestie feugiat nisi.
+          Togather we can develop our skills thorugh various learning
+          initiatives.
         </p>
+        {/* commented links  */}
 
-        <Link to="/thingswedo/skill" className={css(styles.link)}>
+        {/* <Link to="/thingswedo/skill" className={css(styles.link)}>
           Read More
           <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
-        </Link>
+        </Link> */}
       </div>
 
       <div className={css(styles.itemContainer)}>
@@ -51,14 +53,15 @@ const ThingsWeDo = () => {
         />
         <p className={css(styles.title)}>Development</p>
         <p className={css(styles.text)}>
-          Bibendum etiam nec massa ok ok bendum etiam nec massa ok ok posuere
-          neque diam. Mattis molestie feugiat nisi.
+          We can build solutions for real life problems and develop millions of
+          lives.
         </p>
+        {/* commented links  */}
 
-        <Link to="/" className={css(styles.link)}>
+        {/* <Link to="/" className={css(styles.link)}>
           Read More
           <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

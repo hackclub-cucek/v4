@@ -15,29 +15,26 @@ const OurInitiatives = () => {
 
         <div className={css(styles.space)} />
         <div className={css(styles.textContainer)}>
-          <p className={css(styles.heading)}>Id vel varius mauris morbi quis</p>
+          <p className={css(styles.heading)}>Learn From Home</p>
           <p className={css(styles.text)}>
-            In dignissim ut tortor quam. In et convallis suspendisse vel. Urna,
-            ante ut mauris, dolor interdum libero, proin accumsan, vitae. In
-            risus sit convallis volutpat.
+            Flagship event of Hack Club CUCEK to learn and work on all cutting
+            edge technology.
           </p>
 
-          <ul className={css(styles.text)}>
+          {/* <ul className={css(styles.text)}>
             <li>GG wp nt</li>
             <li>Doom slayer</li>
             <li>For the emperor</li>
-          </ul>
+          </ul> */}
           <button className={css(styles.button)}>Live Demo</button>
         </div>
       </div>
 
       <div className={css(styles.itemContainer)}>
         <div className={css(styles.textContainer)}>
-          <p className={css(styles.heading)}>Id vel varius mauris morbi quis</p>
+          <p className={css(styles.heading)}>Hacktoberfest</p>
           <p className={css(styles.text)}>
-            In dignissim ut tortor quam. In et convallis suspendisse vel. Urna,
-            ante ut mauris, dolor interdum libero, proin accumsan, vitae. In
-            risus sit convallis volutpat.
+            One month to promote opensource contributions.
           </p>
           <button className={css(styles.button)}>Know More</button>
         </div>
@@ -59,12 +56,8 @@ const OurInitiatives = () => {
 
         <div className={css(styles.space)} />
         <div className={css(styles.textContainer)}>
-          <p className={css(styles.heading)}>Id vel varius mauris morbi quis</p>
-          <p className={css(styles.text)}>
-            In dignissim ut tortor quam. In et convallis suspendisse vel. Urna,
-            ante ut mauris, dolor interdum libero, proin accumsan, vitae. In
-            risus sit convallis volutpat.
-          </p>
+          <p className={css(styles.heading)}>Happy Hour</p>
+          <p className={css(styles.text)}>Weekly meetup of hack clubers</p>
           <button className={css(styles.button)}>Know More</button>
         </div>
       </div>
