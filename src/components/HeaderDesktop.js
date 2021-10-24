@@ -6,7 +6,7 @@ import {COLORS} from '../styles/Colors';
 
 const routes = [
   {
-    name: 'events',
+    name: 'Events',
     path: '/events',
   },
   {

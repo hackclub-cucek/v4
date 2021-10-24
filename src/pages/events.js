@@ -32,6 +32,7 @@ const Events = ({data}) => {
       </BackgroundImage>
 
       <UpcomingEvents limit={25} />
+
       <FooterDesktop />
     </div>
   );
