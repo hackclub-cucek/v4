@@ -1,6 +1,6 @@
-import {StyleSheet, css} from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite';
 import React from 'react';
-import {COLORS} from '../../styles/Colors';
+import { COLORS } from '../../styles/Colors';
 
 const MainPageMobile = () => {
   return (
@@ -10,9 +10,11 @@ const MainPageMobile = () => {
         A nonprofit network of high school coding clubs and makers around the
         world, for the students, by the students.
       </div>
-      <button className={css(styles.button)} onClick={() => {}}>
-        Our Vision
-      </button>
+      <a href="https://bit.ly/join-hc-cucek">
+        <button className={css(styles.button)} onClick={() => { }}>
+          Our Vision
+        </button>
+      </a>
     </div>
   );
 };

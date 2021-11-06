@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import {COLORS} from '../../styles/Colors';
-import {StyleSheet, css} from 'aphrodite';
+import { COLORS } from '../../styles/Colors';
+import { StyleSheet, css } from 'aphrodite';
 
 const MainPageContentDesktop = ({
   title,
@@ -15,11 +15,13 @@ const MainPageContentDesktop = ({
       <p className={css(styles.details)}>{details}</p>
 
       {buttonText && (
-        <button className={css(styles.button)} onClick={pressHandler}>
-          {buttonText}
-          {/* Our Vision */}
-          <i className="ri-arrow-right-line"></i>
-        </button>
+        <a href="https://bit.ly/join-hc-cucek">
+          <button className={css(styles.button)} onClick={pressHandler}>
+            {buttonText}
+            {/* Our Vision */}
+            <i className="ri-arrow-right-line"></i>
+          </button>
+        </a>
       )}
     </div>
   );
