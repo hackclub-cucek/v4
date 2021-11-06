@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   button: {
+    cursor: 'pointer',
     fontStyle: 'normal',
     fontWeight: '600',
     fontSize: '26.6667px',

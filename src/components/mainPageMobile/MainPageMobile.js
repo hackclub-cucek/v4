@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
   },
   button: {
+    cursor: 'pointer',
     alignItems: 'center',
     backgroundColor: COLORS.secondary,
     border: 0,
