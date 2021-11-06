@@ -10,10 +10,8 @@ const MainPageMobile = () => {
         A nonprofit network of high school coding clubs and makers around the
         world, for the students, by the students.
       </div>
-      <a href="https://bit.ly/join-hc-cucek">
-        <button className={css(styles.button)} onClick={() => { }}>
-          Our Vision
-        </button>
+      <a href="https://bit.ly/join-hc-cucek" className={css(styles.button)}>
+        Begin With Us
       </a>
     </div>
   );

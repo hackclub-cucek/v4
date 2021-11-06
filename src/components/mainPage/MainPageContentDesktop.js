@@ -15,12 +15,10 @@ const MainPageContentDesktop = ({
       <p className={css(styles.details)}>{details}</p>
 
       {buttonText && (
-        <a href="https://bit.ly/join-hc-cucek">
-          <button className={css(styles.button)} onClick={pressHandler}>
-            {buttonText}
-            {/* Our Vision */}
-            <i className="ri-arrow-right-line"></i>
-          </button>
+        <a href="https://bit.ly/join-hc-cucek" className={css(styles.button)}>
+          {buttonText}
+          {/* Our Vision */}
+          <i className="ri-arrow-right-line"></i>
         </a>
       )}
     </div>
