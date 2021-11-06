@@ -11,7 +11,7 @@ const MainPageMobile = () => {
         world, for the students, by the students.
       </div>
       <a href="https://bit.ly/join-hc-cucek" className={css(styles.link)}>
-        <button className={css(styles.button)} onClick={() => { }}>
+        <button className={css(styles.button)}>
           Begin With Us
         </button>
       </a>

@@ -16,7 +16,7 @@ const MainPageContentDesktop = ({
 
       {buttonText && (
         <a href="https://bit.ly/join-hc-cucek" className={css(styles.link)}>
-          <button className={css(styles.button)} onClick={pressHandler}>
+          <button className={css(styles.button)}>
             {buttonText}
             {/* Our Vision */}
             <i className="ri-arrow-right-line"></i>
