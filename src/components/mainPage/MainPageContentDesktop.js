@@ -15,10 +15,12 @@ const MainPageContentDesktop = ({
       <p className={css(styles.details)}>{details}</p>
 
       {buttonText && (
-        <a href="https://bit.ly/join-hc-cucek" className={css(styles.button)}>
-          {buttonText}
-          {/* Our Vision */}
-          <i className="ri-arrow-right-line"></i>
+        <a href="https://bit.ly/join-hc-cucek" className={css(styles.link)}>
+          <button className={css(styles.button)} onClick={pressHandler}>
+            {buttonText}
+            {/* Our Vision */}
+            <i className="ri-arrow-right-line"></i>
+          </button>
         </a>
       )}
     </div>
@@ -48,6 +50,9 @@ const styles = StyleSheet.create({
     WebkitTextStrokeWidth: '2px',
     color: '#FFFFFF',
     margin: 0,
+  },
+  link: {
+    textDecoration: 'none',
   },
   details: {
     fontStyle: 'normal',

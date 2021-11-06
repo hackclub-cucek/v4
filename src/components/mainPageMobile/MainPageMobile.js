@@ -10,8 +10,10 @@ const MainPageMobile = () => {
         A nonprofit network of high school coding clubs and makers around the
         world, for the students, by the students.
       </div>
-      <a href="https://bit.ly/join-hc-cucek" className={css(styles.button)}>
-        Begin With Us
+      <a href="https://bit.ly/join-hc-cucek" className={css(styles.link)}>
+        <button className={css(styles.button)} onClick={() => { }}>
+          Begin With Us
+        </button>
       </a>
     </div>
   );
@@ -45,6 +47,9 @@ const styles = StyleSheet.create({
     lineHeight: '146%',
     textAlign: 'center',
     top: 6,
+  },
+  link: {
+    textDecoration: 'none',
   },
   button: {
     alignItems: 'center',
