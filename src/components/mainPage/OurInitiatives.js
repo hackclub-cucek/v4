@@ -75,7 +75,9 @@ const styles = StyleSheet.create({
     width: 'max-content',
     marginBottom: 40,
   },
-  img: {},
+  img: {
+    borderRadius: 8,
+  },
   space: {
     marginLeft: 120,
   },

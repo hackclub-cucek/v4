@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     display: 'inline-flex',
     flexDirection: 'row',
     border: `1px solid ${COLORS.secondary}`,
-    borderRadius: 4,
+    borderRadius: 8,
   },
   contents: {
     margin: 16,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   image: {
     width: 120,
     height: 120,
-    borderRadius: 4,
+    borderRadius: 8,
   },
   textContents: {
     display: 'flex',
