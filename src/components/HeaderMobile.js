@@ -24,7 +24,7 @@ const HeaderMobile = () => {
           src="../images/icons/menubar.png"
           alt="menu bar"
           className={css(styles.menuBar)}
-          onClick={showSidebar}
+          onTouchStart={showSidebar}
         />
 
         <div className={css(styles.rootNavBar)}>
@@ -45,7 +45,7 @@ const HeaderMobile = () => {
                 src="../images/icons/menubarCross.png"
                 alt="menu bar"
                 className={css(styles.crossIcon)}
-                onClick={showSidebar}
+                onTouchStart={showSidebar}
               />
             </div>
             <div className={css(styles.navBarContents)}>

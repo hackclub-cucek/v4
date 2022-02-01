@@ -13,11 +13,13 @@ const GenerateCard = ({item}) => {
   return (
     <div className={css(styles.container)}>
       <div className={css(styles.containerItems)}>
+        <div className={css(styles.imageDiv)}>
         <img
           src={item.Photo_Link_1}
           alt="robot"
           className={css(styles.image)}
         />
+        </div>
         <img
           src={Badge}
           alt="Badge"
@@ -84,18 +86,21 @@ const styles = StyleSheet.create({
     paddingTop: 96,
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
+    '@media screen and (max-width: 1120px)': {
+      marginLeft: '16px',
+      marginRight: '16px',
+      paddingTop: 32,
+    },
   },
   cards: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     rowGap: 80,
     columnGap: 83,
-    '@media screen and (max-width: 768px)': {
+    '@media screen and (max-width: 1120px)': {
       display: 'flex',
       flexDirection: 'column',
       textAlign: 'center',
-      marginLeft: 16,
-      marginRight: 16,
       rowGap: 0,
       columnGap: 0
     }
@@ -107,8 +112,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     position: 'relative',
-    '@media screen and (max-width: 768px)': {
-      width: 343,
+    '@media screen and (max-width: 1120px)': {
+      width: '100%',
       display: 'flex',
       justifyContent: 'flex-start',
       flexDirection: 'column',
@@ -116,22 +121,30 @@ const styles = StyleSheet.create({
     }
   },
   containerItems: {
-    '@media screen and (max-width: 768px)': {
-      width: 343,
+    '@media screen and (max-width: 1120px)': {
+      width: '100%',
       display: 'flex',
       justifyContent: 'flex-start',
       flexDirection: 'column',
       alignItems: 'flex-start',
     },
   },
+  imageDiv: {
+    width: '100%',
+    height: 'auto',
+    margin: '0 auto'
+  },
   image: {
     width: 357,
     height: 357,
     zIndex: 1,
     borderRadius: 8,
-    '@media screen and (max-width: 768px)': {
-      width: 343,
-      height: 343,
+    '@media screen and (max-width: 1120px)': {
+      // height: 'auto',
+      // width: '100%',
+      width: '100%',
+      height: 'auto',
+      minHeight: '343px',
     },
   },
   badgeActive: {
@@ -151,7 +164,7 @@ const styles = StyleSheet.create({
     lineHeight: '34px',
     color: COLORS.secondary,
     marginBottom: 0,
-    '@media screen and (max-width: 768px)': {
+    '@media screen and (max-width: 1120px)': {
       fontSize: '24px',
       lineHeight: '29px'
     }
@@ -164,7 +177,7 @@ const styles = StyleSheet.create({
     lineHeight: '152%',
     color: 'rgba(0, 2, 73, 0.54)',
     marginTop: 4,
-    '@media screen and (max-width: 768px)': {
+    '@media screen and (max-width: 1120px)': {
       fontSize: '14px',
       lineHeight: '152%',
       marginBottom: 0,
@@ -181,7 +194,7 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     maxHeight: 120,
     height: 120,
-    '@media screen and (max-width: 768px)': {
+    '@media screen and (max-width: 1120px)': {
       fontSize: '18px',
       lineHeight: '146%',
       textAlign: 'left',
@@ -196,7 +209,7 @@ const styles = StyleSheet.create({
     color: COLORS.secondary,
     marginTop: 16,
     textDecoration: 'none',
-    '@media screen and (max-width: 768px)': {
+    '@media screen and (max-width: 1120px)': {
       marginTop: 0,
     }
   },
@@ -207,7 +220,7 @@ const styles = StyleSheet.create({
     fontSize: '16px',
     lineHeight: '30px',
     textAlign: 'center',
-    '@media screen and (max-width: 768px)': {
+    '@media screen and (max-width: 1120px)': {
       marginTop: 0,
       marginBottom: 64,
     }
@@ -233,7 +246,7 @@ const styles = StyleSheet.create({
     letterSpacing: '0.0125em',
     marginTop: 5,
     marginBottom: 32,
-    '@media screen and (max-width: 768px)': {
+    '@media screen and (max-width: 1120px)': {
       fontSize: '16px',
       padding: '19px 38px'
     }
