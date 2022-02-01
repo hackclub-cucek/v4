@@ -9,6 +9,7 @@ const HeaderMobile = () => {
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <div className={css(styles.rootHeader)}>
+      <Link to='/'>
       <StaticImage
         src="../images/hackClubFlag.png"
         quality={95}
@@ -16,6 +17,7 @@ const HeaderMobile = () => {
         alt="flag"
         className={css(styles.flag)}
       />
+      </Link>
 
       <div>
         <StaticImage
@@ -48,7 +50,7 @@ const HeaderMobile = () => {
             </div>
             <div className={css(styles.navBarContents)}>
               <div className={css(styles.text)}>
-                <Link className={css(styles.links)}>Events</Link>
+                <Link className={css(styles.links)} to='/events'>Events</Link>
                 <Link className={css(styles.links)}>Our Team</Link>
                 <Link className={css(styles.links)}>Join Us</Link>
                 <Link className={css(styles.links)}>Scrapbook</Link>
@@ -162,6 +164,8 @@ const styles = StyleSheet.create({
   },
 
   links: {
+    textDecoration: 'none',
+    color: COLORS.white,
     ':hover': {
       color: COLORS.secondary,
     },

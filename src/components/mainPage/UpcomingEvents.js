@@ -6,11 +6,13 @@ import {Link} from 'gatsby';
 import {getEvents} from '../../api/event';
 import {useState, useEffect} from 'react';
 import {start} from 'xstate/lib/actions';
+import useDeviceType from '../hooks/useDeviceType'
 
 const GenerateCard = ({item}) => {
+  const devtype = useDeviceType();
   return (
     <div className={css(styles.container)}>
-      <div>
+      <div className={css(styles.containerItems)}>
         <img
           src={item.Photo_Link_1}
           alt="robot"
@@ -35,7 +37,12 @@ const GenerateCard = ({item}) => {
         <Link to="/" className={css(styles.knowMoreContainer)}>
           <p className={css(styles.moreText)}>Know More</p>
 
-          <i className="ri-arrow-right-line" style={{marginLeft: 6}}></i>
+          <i className={
+            devtype === 'mobile'
+              ? css(styles.hideArrow)
+                : 'ri-arrow-right-line'
+          }
+          style={{marginLeft: 6}}></i>
         </Link>
       </div>
     </div>
@@ -83,6 +90,15 @@ const styles = StyleSheet.create({
     gridTemplateColumns: 'repeat(3, 1fr)',
     rowGap: 80,
     columnGap: 83,
+    '@media screen and (max-width: 768px)': {
+      display: 'flex',
+      flexDirection: 'column',
+      textAlign: 'center',
+      marginLeft: 16,
+      marginRight: 16,
+      rowGap: 0,
+      columnGap: 0
+    }
   },
 
   container: {
@@ -91,11 +107,32 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     position: 'relative',
+    '@media screen and (max-width: 768px)': {
+      width: 343,
+      display: 'flex',
+      justifyContent: 'flex-start',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    }
+  },
+  containerItems: {
+    '@media screen and (max-width: 768px)': {
+      width: 343,
+      display: 'flex',
+      justifyContent: 'flex-start',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    },
   },
   image: {
     width: 357,
     height: 357,
     zIndex: 1,
+    borderRadius: 8,
+    '@media screen and (max-width: 768px)': {
+      width: 343,
+      height: 343,
+    },
   },
   badgeActive: {
     position: 'absolute',
@@ -113,8 +150,11 @@ const styles = StyleSheet.create({
     fontSize: '28px',
     lineHeight: '34px',
     color: COLORS.secondary,
-
     marginBottom: 0,
+    '@media screen and (max-width: 768px)': {
+      fontSize: '24px',
+      lineHeight: '29px'
+    }
   },
   date: {
     fontFamily: 'Libre Franklin',
@@ -124,6 +164,13 @@ const styles = StyleSheet.create({
     lineHeight: '152%',
     color: 'rgba(0, 2, 73, 0.54)',
     marginTop: 4,
+    '@media screen and (max-width: 768px)': {
+      fontSize: '14px',
+      lineHeight: '152%',
+      marginBottom: 0,
+    marginTop: 4,
+
+    }
   },
   text: {
     fontFamily: 'Libre Franklin',
@@ -134,6 +181,14 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     maxHeight: 120,
     height: 120,
+    '@media screen and (max-width: 768px)': {
+      fontSize: '18px',
+      lineHeight: '146%',
+      textAlign: 'left',
+      height: 'max-content',
+      maxHeight: 'max-content',
+      marginTop: 20,
+    }
   },
   knowMoreContainer: {
     display: 'flex',
@@ -141,6 +196,9 @@ const styles = StyleSheet.create({
     color: COLORS.secondary,
     marginTop: 16,
     textDecoration: 'none',
+    '@media screen and (max-width: 768px)': {
+      marginTop: 0,
+    }
   },
   moreText: {
     fontFamily: 'Libre Franklin',
@@ -149,6 +207,10 @@ const styles = StyleSheet.create({
     fontSize: '16px',
     lineHeight: '30px',
     textAlign: 'center',
+    '@media screen and (max-width: 768px)': {
+      marginTop: 0,
+      marginBottom: 64,
+    }
   },
 
   centerDiv: {
@@ -170,8 +232,11 @@ const styles = StyleSheet.create({
     lineHeight: '128.7%',
     letterSpacing: '0.0125em',
     marginTop: 5,
-
     marginBottom: 32,
+    '@media screen and (max-width: 768px)': {
+      fontSize: '16px',
+      padding: '19px 38px'
+    }
   },
   space: {
     width: 82,
