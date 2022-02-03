@@ -10,11 +10,41 @@ import BackgroundImage from 'gatsby-background-image';
 import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
 import ProjectCard from '../components/projects/ProjectCard';
 import {COLORS} from '../styles/Colors';
+import FooterMobile from '../components/FooterMobile';
+import HeaderMobile from '../components/HeaderMobile';
+import ProjectPageMobile from '../components/mainPageMobile/ProjectPageMobile';
+import useDeviceType from '../components/hooks/useDeviceType';
 
 const Projects = ({data}) => {
+  const deviceType = useDeviceType();
   const image = getImage(data.file);
   const bgImage = convertToBgImage(image);
   const cardList = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  if (deviceType === 'mobile') {
+    return (
+      <div>
+        <BackgroundImage
+          Tag="section"
+          {...bgImage}
+          preserveStackingContext
+          className={css(styles.rootMobile)}>
+          <HeaderMobile />
+          <ProjectPageMobile />
+        </BackgroundImage>
+        <div className={css(styles.contents)}>
+          <div className={css(styles.cardRow)}>
+            {cardList.map((item, id) => (
+              <div key={id}>
+                <ProjectCard />
+              </div>
+            ))}
+          </div>
+          <button className={css(styles.buttonBottom)}> View More</button>
+        </div>
+        <FooterMobile />
+      </div>
+    );
+  }
   return (
     <div>
       <BackgroundImage
@@ -72,6 +102,10 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     display: 'flex',
     flexDirection: 'column',
+    '@media (max-width: 1080px)': {
+      marginTop: 50,
+      width: 'auto',
+    },
   },
   cardRow: {
     display: 'grid',
@@ -79,6 +113,14 @@ const styles = StyleSheet.create({
     width: 1240,
     justifyContent: 'space-between',
     gap: 32,
+    '@media (max-width: 1080px)': {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100vw',
+      gap: 24,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
   buttonBottom: {
     width: 156,
@@ -93,6 +135,13 @@ const styles = StyleSheet.create({
     letterSpacing: '.0125em',
     textAlign: 'center',
     marginTop: 64,
+    '@media (max-width: 1080px)': {
+      width: 160,
+      height: 59,
+      fontSize: 16,
+      marginTop: 56,
+      marginBottom: 32,
+    },
   },
 });
 

@@ -107,10 +107,10 @@ const styles = StyleSheet.create({
     width: 124,
   },
   menuBar: {
-    height: 16,
-    right: 22,
-    top: 22,
-    width: 18,
+    height: 21,
+    marginRight: 22,
+    marginTop: 22,
+    width: 23,
   },
 
   /*----Navbar---*/

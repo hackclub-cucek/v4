@@ -40,6 +40,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     border: `1px solid ${COLORS.secondary}`,
     borderRadius: 8,
+    '@media (max-width: 1080px)': {
+      height: 'auto',
+      minWidth: 358
+    }
   },
   contents: {
     margin: 16,
@@ -65,6 +69,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     marginLeft: 24,
     width: 227,
+    '@media (max-width: 1080px)': {
+      width: 179
+    }
   },
   textContents: {
     display: 'flex',
@@ -79,6 +86,9 @@ const styles = StyleSheet.create({
     lineHeight: '24px',
     color: COLORS.secondary,
     width: 215,
+    '@media (max-width: 1080px)': {
+      width: 'auto'
+    }
   },
 
   description: {
