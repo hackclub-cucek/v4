@@ -45,14 +45,20 @@ const styles = StyleSheet.create({
     border: `1px solid ${COLORS.secondary}`,
     borderRadius: 8,
     '@media (max-width: 1080px)': {
+    display: 'flex',
       height: 'auto',
-      minWidth: 358
+      width: '90vw',
+      marginLeft: 16,
+      marginRight: 16
     }
   },
   contents: {
     margin: 16,
     display: 'inline-flex',
     flexDirection: 'row',
+    '@media (max-width: 1080px)': {
+      display: 'flex',
+      }
   },
   image: {
     width: 120,

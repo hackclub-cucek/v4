@@ -125,6 +125,8 @@ const styles = StyleSheet.create({
       gap: 24,
       justifyContent: 'center',
       alignItems: 'center',
+      // marginLeft: 16,
+      // marginRight: 16,
     },
   },
   buttonBottom: {
