@@ -15,17 +15,17 @@ const ProjectCard = () => {
           <div className={css(styles.textContents)}>
             <div className={css(styles.title)}>Wade Warren</div>
             <div className={css(styles.description)}>
-              Amet, viverra nec sed in massa nibh. Magna dapibus auctor velit,
-              est, mattis urna.
+              Amet, viverra nec sed in massa nibh. Ma gna velit sop, est, mattis
+              urna.
             </div>
           </div>
           <div className={css(styles.bottomContent)}>
             <span>Dart</span>
             <span>
-              <i class="ri-star-line"></i>42
+              <i className="ri-star-line"></i>42
             </span>
             <span>
-              <i class="ri-git-branch-fill"></i>6
+              <i className="ri-git-branch-fill"></i>6
             </span>
           </div>
         </div>
@@ -40,9 +40,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     border: `1px solid ${COLORS.secondary}`,
     borderRadius: 8,
+    '@media (max-width: 1080px)': {
+      display: 'flex',
+      height: 'auto',
+      width: '91.5vw',
+      maxWidth: 485,
+    },
   },
   contents: {
-    margin: 16,
+    margin: 12,
     display: 'inline-flex',
     flexDirection: 'row',
   },
@@ -63,8 +69,12 @@ const styles = StyleSheet.create({
   righContent: {
     display: 'flex',
     flexDirection: 'column',
-    marginLeft: 24,
+    marginLeft: 20,
     width: 227,
+    '@media (max-width: 1080px)': {
+      minWidth: 179,
+      width: 'auto',
+    },
   },
   textContents: {
     display: 'flex',
@@ -79,6 +89,9 @@ const styles = StyleSheet.create({
     lineHeight: '24px',
     color: COLORS.secondary,
     width: 215,
+    '@media (max-width: 1080px)': {
+      width: 'auto',
+    },
   },
 
   description: {
@@ -94,6 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     color: COLORS.secondary,
     marginTop: 12,
+    maxWidth: 170,
   },
 });
 

@@ -161,6 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: '128.7%',
     letterSpacing: ' 0.0125em',
+    marginBottom: 32
   },
 });
 

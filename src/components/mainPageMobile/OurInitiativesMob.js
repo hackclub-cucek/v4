@@ -7,62 +7,52 @@ import image3 from '../../images/happyFace.png';
 import {COLORS} from '../../styles/Colors';
 
 const OurInitiativesMob = () => {
+  const initiatives = [
+    {
+      id: 1,
+      title: 'Learn From Home',
+      description:
+        'Flagship event of Hack Club CUCEK to learn and work on all cutting edge technology.',
+      image: image1, 
+    },
+    {
+      id: 2,
+      title: 'Hacktoberfest',
+      description: 'One month to promote opensource contributions.',
+      image: image2 
+    },
+    {
+      id: 3,
+      title: 'Happy Hour',
+      description: 'Weekly meetup of hack clubers.',
+      image: image3
+    },
+  ];
+
   return (
     <div className={css(styles.root)}>
-      <div className={css(styles.container)}>
-        <div className={css(styles.imgDiv)}>
-          <img src={image1} alt="robot" className={css(styles.image)} />
-        </div>
-        <div className={css(styles.textBox)}>
-          <div className={css(styles.textContents)}>
-            {' '}
-            <div className={css(styles.title)}>Learn From Home</div>
-            <div className={css(styles.description)}>
-              Flagship event of Hack Club CUCEK to learn and work on all cutting
-              edge technology.
-            </div>
-            <div className={css(styles.uoList)}>
+      {initiatives.map(init => (
+        <div className={css(styles.container)} key={initiatives.id}>
+          <div className={css(styles.imgDiv)}>
+            <img src={init.image} alt="robot" className={css(styles.image)} />
+          </div>
+          <div className={css(styles.textBox)}>
+            <div className={css(styles.textContents)}>
+              {' '}
+              <div className={css(styles.title)}>{init.title}</div>
+              <div className={css(styles.description)}>{init.description}</div>
+              {/* <div className={css(styles.uoList)}>
               <ul className={css(styles.listCont)}>
                 <li>Eget diam purus, a massa</li>
                 <li>Ante ut mauris, dolor interdum</li>
                 <li>Proin accumsan</li>
               </ul>
+            </div> */}
+              <button className={css(styles.button)}> Know More</button>
             </div>
-            <button className={css(styles.button)}> Live Demo</button>
           </div>
         </div>
-      </div>
-      <div className={css(styles.container)}>
-        <div className={css(styles.imgDiv)}>
-          <img src={image2} alt="robot" className={css(styles.image)} />
-        </div>
-        <div className={css(styles.textBox)}>
-          <div className={css(styles.textContents)}>
-            {' '}
-            <div className={css(styles.title)}>Hacktoberfest</div>
-            <div className={css(styles.description)}>
-              One month to promote opensource contributions.
-            </div>
-            <button className={css(styles.button)}> Know More</button>
-          </div>
-        </div>
-      </div>
-      <div className={css(styles.container)}>
-        <div className={css(styles.imgDiv)}>
-          <img src={image3} alt="robot" className={css(styles.image)} />
-        </div>
-        <div className={css(styles.textBox)}>
-          <div className={css(styles.textContents)}>
-            <div className={css(styles.title)}>Happy Hour</div>
-            <div className={css(styles.description)}>
-              Weekly meetup of hack clubers
-            </div>
-            <button className={css(styles.button, styles.buttonLast)}>
-              Know More
-            </button>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
@@ -75,11 +65,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     maxWidth: 550,
+    rowGap: 83
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
-    textAlign: 'center',
+    // textAlign: 'center',
     marginLeft: 16,
     marginRight: 16,
   },
@@ -94,17 +85,17 @@ const styles = StyleSheet.create({
   textBox: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    // textAlign: 'center',
   },
   textContents: {
     maxWidth: 'auto',
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'left',
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   },
   title: {
     color: COLORS.primary,
@@ -112,6 +103,7 @@ const styles = StyleSheet.create({
     lineHeight: '29px',
     fontStyle: 'normal',
     fontWeight: 'bold',
+    textAlign: 'left'
   },
   description: {
     color: COLORS.primary,
@@ -144,10 +136,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: '128.7%',
     fontStyle: 'normal',
-    marginBottom: 83,
-  },
-  buttonLast: {
-    marginBottom: 0,
   },
 });
 

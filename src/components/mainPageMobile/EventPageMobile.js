@@ -1,6 +1,7 @@
 import { StyleSheet, css } from 'aphrodite';
 import React from 'react';
 import { COLORS } from '../../styles/Colors';
+import UpcomingEventsMob from './UpcomingEventsMob';
 
 const MainPageMobile = () => {
   return (

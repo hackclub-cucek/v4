@@ -24,7 +24,7 @@ const HeaderMobile = () => {
           src="../images/icons/menubar.png"
           alt="menu bar"
           className={css(styles.menuBar)}
-          onTouchStart={showSidebar}
+          onClick={showSidebar}
         />
 
         <div className={css(styles.rootNavBar)}>
@@ -45,7 +45,7 @@ const HeaderMobile = () => {
                 src="../images/icons/menubarCross.png"
                 alt="menu bar"
                 className={css(styles.crossIcon)}
-                onTouchStart={showSidebar}
+                onClick={showSidebar}
               />
             </div>
             <div className={css(styles.navBarContents)}>
@@ -107,10 +107,10 @@ const styles = StyleSheet.create({
     width: 124,
   },
   menuBar: {
-    height: 16,
-    right: 22,
-    top: 22,
-    width: 18,
+    height: 21,
+    marginRight: 22,
+    marginTop: 22,
+    width: 23,
   },
 
   /*----Navbar---*/

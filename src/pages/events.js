@@ -10,11 +10,11 @@ import {convertToBgImage} from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
 import MainPageContentDesktop from '../components/mainPage/MainPageContentDesktop';
 import UpcomingEvents from '../components/mainPage/UpcomingEvents';
-import UpcomingEventsMob from '../components/mainPageMobile/UpcomingEventsMob'
+import UpcomingEventsMob from '../components/mainPageMobile/UpcomingEventsMob';
 import HeaderMobile from '../components/HeaderMobile';
+import FooterMobile from '../components/FooterMobile';
 import EventPageMobile from '../components/mainPageMobile/EventPageMobile';
 import useDeviceType from '../components/hooks/useDeviceType';
-
 
 const Events = ({data}) => {
   const deviceType = useDeviceType();
@@ -25,16 +25,16 @@ const Events = ({data}) => {
     return (
       <div>
         <BackgroundImage
-        Tag="section"
+          Tag="section"
           {...bgImage}
           preserveStackingContext
           className={css(styles.rootMobile)}>
           <HeaderMobile />
           <EventPageMobile />
         </BackgroundImage>
-       <UpcomingEvents limit={25} /> 
-
-    </div>
+        <UpcomingEvents limit={25} />
+        <FooterMobile />
+      </div>
     );
   }
 

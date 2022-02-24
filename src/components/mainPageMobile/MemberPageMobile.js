@@ -1,20 +1,16 @@
-import { StyleSheet, css } from 'aphrodite';
+import {StyleSheet, css} from 'aphrodite';
 import React from 'react';
-import { COLORS } from '../../styles/Colors';
+import {COLORS} from '../../styles/Colors';
 
 const MainPageMobile = () => {
   return (
     <div className={css(styles.container)}>
-      <div className={css(styles.mainTitle)}>HACK CLUB CUCEK</div>
+      <div className={css(styles.mainTitle)}>MEMBERS</div>
       <div className={css(styles.subTiile)}>
         A nonprofit network of high school coding clubs and makers around the
         world, for the students, by the students.
       </div>
-      <a href="https://bit.ly/join-hc-cucek" className={css(styles.link)}>
-        <button className={css(styles.button)}>
-         Our Vision
-        </button>
-      </a>
+      <button className={css(styles.button)}>Add Your Profile</button>
     </div>
   );
 };
@@ -23,15 +19,17 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'column',
-
     margin: '161px 16px 100px 16px',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   mainTitle: {
     color: '#FFFFFF',
     fontSize: 48,
     fontWeight: 900,
     fontStyle: 'normal',
-    height: 118,
+    // height: 118,
+    marginBottom: 6,
     lineHeight: '59px',
     letterSpacing: '0.045em',
     textTransform: 'uppercase',
@@ -64,13 +62,13 @@ const styles = StyleSheet.create({
     fontWeight: 600,
     fontSize: 16,
     height: 59,
-    width: 157,
+    width: 209,
     lineHeight: '128.7%',
     letterSpacing: '0.0125em',
     marginTop: 44,
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: '19px 37px',
+    padding: '19px 36px',
   },
 });
 

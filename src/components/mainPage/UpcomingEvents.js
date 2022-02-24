@@ -67,7 +67,7 @@ const UpcomingEvents = () => {
         <div className={css(styles.cards)}>
           {upcomingEvents &&
             upcomingEvents.map(item => {
-              return <GenerateCard item={item} />;
+              return <GenerateCard item={item} key={null} />;
             })}
         </div>
       </div>
